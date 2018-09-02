@@ -19,15 +19,16 @@ class Db
 
     public function __construct()
     {
-        $dsn = "'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName";
+        $dsn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
         $options = array(
             \PDO::ATTR_PERSISTENT => true,
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
         );
 
         try {
+            $this->dbConnection = new \PDO('mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName, $this->dbLogin, $this->dbPassword, $options);
+            $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->dbConnection = new \PDO($dsn , $this->dbLogin, $this->dbPassword);
-            print_r($this->dbConnection); die;
         } catch (\PDOException $e) {
             return 'Connection failed: ' . $e->getMessage();
         }
@@ -48,7 +49,6 @@ class Db
             $query .= " ORDER BY {$orderBy[0]} {$orderBy[1]}";
         }
         //echo $query; die;
-
         $selectQuery = $this->dbConnection->prepare($query);
         try {
             $selectQuery->execute();
