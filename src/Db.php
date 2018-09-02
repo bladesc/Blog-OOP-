@@ -16,6 +16,7 @@ class Db
     private $dbLogin = 'root';
     private $dbPassword = '';
     private $dbName = 'blogoop';
+    private $stmt;
 
     public function __construct()
     {
@@ -28,13 +29,49 @@ class Db
         try {
             $this->dbConnection = new \PDO('mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName, $this->dbLogin, $this->dbPassword, $options);
             $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            $this->dbConnection = new \PDO($dsn , $this->dbLogin, $this->dbPassword);
+            $this->dbConnection = new \PDO($dsn, $this->dbLogin, $this->dbPassword);
         } catch (\PDOException $e) {
             return 'Connection failed: ' . $e->getMessage();
         }
     }
 
-    public function selectData(string $what = '*', string $from = '', array $where = [], $limit = false, array $orderBy = [])
+
+    public function prepare(string $query): void
+    {
+        $this->stmt = $this->dbConnection->prepare($query);
+    }
+
+    public function execute(): void
+    {
+        $this->stmt->execute();
+    }
+
+    public function getRecords()
+    {
+        return $this->stmt->fetch();
+    }
+
+    public function getRowCount(): int
+    {
+        return $this->stmt->rowCount();
+    }
+
+    public function beginTransaction()
+    {
+        return $this->stmt->beginTransaction();
+    }
+
+    public function endTransaction()
+    {
+        return $this->stmt->commit();
+    }
+
+    public function cancelTransaction()
+    {
+        return $this->stmt->rollBack();
+    }
+
+    /*public function selectData(string $what = '*', string $from = '', array $where = [], $limit = false, array $orderBy = [])
     {
         $query = "SELECT $what";
         $query .= " FROM $from";
@@ -63,7 +100,7 @@ class Db
         } else {
             return 'No data found';
         }
-    }
+    }*/
 
     public function closeConnection()
     {
