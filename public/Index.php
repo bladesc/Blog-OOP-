@@ -1,16 +1,22 @@
 <?php
 
 require '../vendor/autoload.php';
+use Blog\Db;
+use Blog\Entry;
 
-$db = new Blog\Db;
+/*$db = new Db;
 $db->prepare('select * from news');
 $db->execute();
 $news = $db->getRecords();
-echo $db->getRowCount();
+echo $db->getRowCount();*/
+
+$db = new Db;
+$entry = new Entry($db);
+$entries = $entry->getEntries();
 
 //$news = $db->selectData('*', 'news', ['id','=','1'],null,['id','ASC'] );
-$db->closeConnection();
+
 
 echo "<pre>";
-print_r($news);
+print_r($entries);
 echo "</pre>";

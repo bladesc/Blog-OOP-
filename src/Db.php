@@ -30,7 +30,6 @@ class Db
         }
     }
 
-
     public function prepare(string $query): void
     {
         try {
@@ -40,7 +39,7 @@ class Db
         }
     }
 
-    public function execute()
+    public function execute(): void
     {
         try {
             $this->stmt->execute();
@@ -49,7 +48,7 @@ class Db
         }
     }
 
-    public function getRecords()
+    public function getRecords(): array
     {
         return $this->stmt->fetch();
     }
