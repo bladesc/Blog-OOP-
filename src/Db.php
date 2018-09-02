@@ -21,29 +21,32 @@ class Db
     public function __construct()
     {
         $dsn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
-        $options = array(
-            \PDO::ATTR_PERSISTENT => true,
-            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
-        );
 
         try {
-            $this->dbConnection = new \PDO('mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName, $this->dbLogin, $this->dbPassword, $options);
-            $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->dbConnection = new \PDO($dsn, $this->dbLogin, $this->dbPassword);
+            $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            return 'Connection failed: ' . $e->getMessage();
+            echo 'Connection failed: ' . $e->getMessage();
         }
     }
 
 
     public function prepare(string $query): void
     {
-        $this->stmt = $this->dbConnection->prepare($query);
+        try {
+            $this->stmt = $this->dbConnection->prepare($query);
+        } catch (\PDOException $e) {
+            echo 'Prepare failed: ' . $e->getMessage();
+        }
     }
 
-    public function execute(): void
+    public function execute()
     {
-        $this->stmt->execute();
+        try {
+            $this->stmt->execute();
+        } catch (\PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
     }
 
     public function getRecords()

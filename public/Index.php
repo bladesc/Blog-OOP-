@@ -1,4 +1,5 @@
 <?php
+
 require '../vendor/autoload.php';
 
 $db = new Blog\Db;
