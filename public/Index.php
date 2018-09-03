@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require __DIR__ .'/../vendor/autoload.php';
 use Blog\Db;
 use Blog\Entry;
 

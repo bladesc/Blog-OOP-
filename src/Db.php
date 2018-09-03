@@ -8,14 +8,16 @@
 
 namespace Blog;
 
+include (__DIR__.'/../config/config.php');
+
 class Db
 {
     private $dbConnection;
 
-    private $dbHost = 'localhost';
-    private $dbLogin = 'root';
-    private $dbPassword = '';
-    private $dbName = 'blogoop';
+    private $dbHost = DB_HOST;
+    private $dbLogin = DB_LOGIN;
+    private $dbPassword = DB_PASSWORD;
+    private $dbName = DB_NAME;
     private $stmt;
 
     public function __construct()
