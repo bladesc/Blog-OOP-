@@ -15,7 +15,14 @@ $entry = new Entry($db);
 $entries = $entry->getEntries();
 
 //$news = $db->selectData('*', 'news', ['id','=','1'],null,['id','ASC'] );
+$pas1 = password_hash('1as', PASSWORD_BCRYPT);
+$pas2 = password_hash('1as', PASSWORD_BCRYPT);
 
+if (password_verify('1as', $pas2)) {
+    echo 'Password is valid!';
+} else {
+    echo 'Invalid password.';
+}
 
 echo "<pre>";
 print_r($entries);
