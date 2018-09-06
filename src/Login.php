@@ -14,29 +14,32 @@ class Login
     private $user;
     private $session;
 
-    public function __construct(Db $db, User $user, Session $session)
+    public function __construct(Session $session)
     {
-        $this->db = $db;
-        $this->user = $user;
         $this->session = $session;
     }
 
-    public function logIn()
+    public function logIn(Db $db, User $user)
     {
-        echo $this->user->getEmail();
+        $this->db = $db;
+        $this->user = $user;
+
         $this->db->prepare("SELECT * FROM users WHERE email = '{$this->user->getEmail()}'");
         $this->db->execute();
         if ($this->db->getRowCount() === 0) {
             return 0;
         }
         else {
-            return $this->db->getRecords();
+            $user = $this->db->getRecords();
+            $this->session->setSession('userId', $user['id']);
+            return $user;
         }
 
     }
 
     public function logOut()
     {
-
+        $this->session->deleteSession('userId');
+        $this->session->destroySession();
     }
 }

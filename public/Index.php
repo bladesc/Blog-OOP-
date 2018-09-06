@@ -21,14 +21,14 @@ echo "</pre>";
 //user login
 $db = new Db;
 $user = new User;
-$user->setEmail('info@epixso.pl');
+$user->setEmail('info@epixo.pl');
 $user->setPassword('1');
 
 $session = new Session;
 
-$login = new Login($db, $user, $session);
-print_r($login->logIn());
-
+$login = new Login($session);
+print_r($login->logIn($db, $user));
+print_r($_SESSION);
 $pas1 = password_hash('1as', PASSWORD_BCRYPT);
 $pas2 = password_hash('1as', PASSWORD_BCRYPT);
 
