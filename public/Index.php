@@ -3,18 +3,32 @@
 require __DIR__ .'/../vendor/autoload.php';
 use Blog\Db;
 use Blog\Entry;
+use Blog\User;
+use Blog\Login;
+use Blog\Session;
 
-/*$db = new Db;
-$db->prepare('select * from news');
-$db->execute();
-$news = $db->getRecords();
-echo $db->getRowCount();*/
-
+//entries
 $db = new Db;
 $entry = new Entry($db);
 $entries = $entry->getEntries();
 
-//$news = $db->selectData('*', 'news', ['id','=','1'],null,['id','ASC'] );
+echo "<pre>";
+print_r($entries);
+echo "</pre>";
+//endentries
+
+
+//user login
+$db = new Db;
+$user = new User;
+$user->setEmail('info@epixso.pl');
+$user->setPassword('1');
+
+$session = new Session;
+
+$login = new Login($db, $user, $session);
+print_r($login->logIn());
+
 $pas1 = password_hash('1as', PASSWORD_BCRYPT);
 $pas2 = password_hash('1as', PASSWORD_BCRYPT);
 
@@ -24,6 +38,3 @@ if (password_verify('1as', $pas2)) {
     echo 'Invalid password.';
 }
 
-echo "<pre>";
-print_r($entries);
-echo "</pre>";

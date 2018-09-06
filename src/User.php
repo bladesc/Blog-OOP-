@@ -11,27 +11,44 @@ namespace Blog;
 
 class User
 {
-    private $db;
     private $login;
     private $email;
-    private $nickname;
+    private $password;
 
-    public function logIn(string $email, string $password)
+    public function setLogin(string $login)
     {
-
-        $this->db->prepare('SELECT * FROM users WHERE email = "email"';
-        $this->db->execute();
-        return $this->db->getRecords();
+        $this->login=$this->validateData($login);
     }
 
-    public function logOut()
+    public function setEmail(string $email)
     {
-
+        $this->email=$this->validateData($email);
     }
 
-    public function validateData($data)
+    public function setPassword(string $password)
     {
-        trim($data);
-        return ($data);
+        $this->password=$this->validateData($password);
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+
+    function validateData($data)
+    {
+        return htmlspecialchars(trim($data));
+
     }
 }
