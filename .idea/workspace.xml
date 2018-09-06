@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/login/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redirect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +46,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="563">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="e#50#62#0#PHP" expanded="true" />
               </folding>
@@ -56,13 +55,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/login/login.php">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="35" column="1" lean-forward="true" selection-start-line="9" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="168">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#6#18#0#PHP" expanded="true" />
+                <element signature="e#50#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,7 +79,7 @@
       <file leaf-file-name="Validate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Validate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="-126">
               <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
@@ -107,8 +106,8 @@
       <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+            <state relative-caret-position="483">
+              <caret line="43" column="54" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -147,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/Register.php" />
         <option value="$PROJECT_DIR$/src/Helper.php" />
         <option value="$PROJECT_DIR$/public/Index.php" />
-        <option value="$PROJECT_DIR$/public/register.php" />
         <option value="$PROJECT_DIR$/public/authorization.php" />
         <option value="$PROJECT_DIR$/src/Category.php" />
         <option value="$PROJECT_DIR$/src/Entry.php" />
@@ -157,6 +155,7 @@
         <option value="$PROJECT_DIR$/src/Session.php" />
         <option value="$PROJECT_DIR$/src/Login.php" />
         <option value="$PROJECT_DIR$/public/login/login.php" />
+        <option value="$PROJECT_DIR$/public/register.php" />
         <option value="$PROJECT_DIR$/public/login.php" />
       </list>
     </option>
@@ -232,12 +231,6 @@
             <path>
               <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -285,12 +278,12 @@
       <workItem from="1535971668204" duration="7907000" />
       <workItem from="1535981164177" duration="1909000" />
       <workItem from="1536188717227" duration="10199000" />
-      <workItem from="1536257719191" duration="9594000" />
+      <workItem from="1536257719191" duration="12563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44890000" />
+    <option name="totallyTimeSpent" value="47859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="934" extended-state="6" />
@@ -558,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/authorization.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -603,41 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Redirect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="25" column="33" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-end-column="5" />
-          <folding>
-            <element signature="e#51#63#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,10 +606,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#50#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Redirect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-end-column="5" />
+          <folding>
+            <element signature="e#51#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="563">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#50#62#0#PHP" expanded="true" />
           </folding>

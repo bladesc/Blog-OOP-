@@ -7,12 +7,16 @@ use Blog\User;
 use Blog\Validate;
 use Blog\Redirect;
 
+
+//#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {
+    print_r($_SESSION['messages']);
     $session->deleteSession('messages');
 }
 
-if (isset($_POST['submit'])) {
+//#########LOGIN
+if (isset($_POST['login'])) {
     $validate = new Validate;
     $email = $validate->validateEmail($_POST['email']);
     $password = $validate->validatePassword($_POST['password']);
@@ -31,7 +35,8 @@ if (isset($_POST['submit'])) {
     $login = new Login($session);
 
     $db = new Db;
-    print_r($login->logIn($db, $user));
+    $login->logIn($db, $user);
+
     if (!empty($login->showMessage())) {
         $redirect = new Redirect;
         $session = new Session;
@@ -39,11 +44,29 @@ if (isset($_POST['submit'])) {
     }
 }
 
+//#########LOGOUT
+if (isset($_POST['logout'])) {
+    $session = new Session;
+    if ($session->issetSession('loggedUser')) {
+        $session->deleteSession('loggedUser');
+        $redirect = new Redirect;
+        $redirect->redirectBack();
+    }
+}
+
+//SESSION
+print_r($_SESSION);
 ?>
 
+<?php if (isset($_SESSION['loggedUser'])): ?>
+<form method="POST" action="">
+    <button type="submit" name="logout">Log out</button>
+</form>
+<?php else: ?>
 
 <form method="POST" action="">
     <input type="email" name="email" placeholder="Your e-mail" required>
     <input type="password" name="password" required>
-    <button type="submit" name="submit">Zaloguj</button>
+    <button type="submit" name="login">Log in</button>
 </form>
+<?php endif; ?>
