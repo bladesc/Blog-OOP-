@@ -8,6 +8,8 @@
 
 namespace Blog;
 
+include 'Helper.php';
+use Blog\Helper;
 
 class User
 {
@@ -17,17 +19,17 @@ class User
 
     public function setLogin(string $login)
     {
-        $this->login=$this->validateData($login);
+        $this->login=Helper::validateValue($login);
     }
 
     public function setEmail(string $email)
     {
-        $this->email=$this->validateData($email);
+        $this->email=Helper::validateValue($email);
     }
 
     public function setPassword(string $password)
     {
-        $this->password=$this->validateData($password);
+        $this->password=Helper::validateValue($password);
     }
 
     public function getEmail()
@@ -45,9 +47,4 @@ class User
         return $this->login;
     }
 
-
-    function validateData($data)
-    {
-        return htmlspecialchars(trim($data));
-    }
 }
