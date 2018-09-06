@@ -4,12 +4,14 @@ use Blog\Db;
 use Blog\Login;
 use Blog\Session;
 use Blog\User;
+use Blog\Validate;
 
 //user login
 $db = new Db;
 $user = new User;
-$user->setEmail('info@epix3o.pl');
-$user->setPassword('1');
+$validate = new Validate;
+$user->setEmail('info@epixo.pl');
+$user->setPassword('2');
 
 $session = new Session;
 

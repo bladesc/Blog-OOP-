@@ -18,7 +18,6 @@ class Login
 
     private $textMessages = [
         "E-mail doesn't exist",
-        "Incorrect username",
         "Incorrect password"
     ];
 
