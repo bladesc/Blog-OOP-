@@ -13,7 +13,8 @@ class Validate
     private $errorMessages = [];
 
     private $textMessages = [
-        "Incorrect e-mail"
+        "Incorrect e-mail",
+        "Incorrect password"
     ];
 
     public function validateEmail($value)
@@ -23,6 +24,17 @@ class Validate
             return $value;
         } else {
             $this->addMessage($this->textMessages[0]);
+            return false;
+        }
+    }
+
+    public function validatePassword($value)
+    {
+        $pattern = '/^([a-zA-Z]|[0-9]){5,12}$/';
+        if (preg_match($pattern, $value)) {
+            return $value;
+        } else {
+            $this->addMessage($this->textMessages[1]);
             return false;
         }
     }

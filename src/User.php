@@ -8,9 +8,6 @@
 
 namespace Blog;
 
-include 'Validate.php';
-use Blog\Validate;
-
 class User
 {
     private $login;

@@ -5,17 +5,30 @@ use Blog\Login;
 use Blog\Session;
 use Blog\User;
 use Blog\Validate;
-
-//user login
-$db = new Db;
-$user = new User;
-$validate = new Validate;
-$user->setEmail('info@epixo.pl');
-$user->setPassword('2');
+use Blog\Redirect;
 
 $session = new Session;
+if ($session->issetSession('messages')) {
+    print_r($_SESSION);
+}
 
+$validate = new Validate;
+$email = $validate->validateEmail('info@epixo.pl');
+$password = $validate->validatePassword('22222');
+
+if (!empty($validate->showMessage())) {
+   $redirect = new Redirect;
+   $session = new Session;
+   $redirect->redirectBack($validate->showMessage(), $session);
+}
+
+$user = new User;
+$user->setEmail($email);
+$user->setPassword($password);
+
+$session = new Session;
 $login = new Login($session);
 
+$db = new Db;
 print_r($login->logIn($db, $user));
 print_r($login->showMessage());

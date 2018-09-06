@@ -44,7 +44,7 @@ class Login
                 $this->session->setSession('loggedUser', $userSession);
                 return $user;
             } else {
-                $this->addMessage($this->textMessages[2]);
+                $this->addMessage($this->textMessages[1]);
             }
         }
     }
