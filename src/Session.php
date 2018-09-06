@@ -13,7 +13,9 @@ class Session
 
     public function __construct()
     {
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
     }
 
     public function setSession($key, $value)
@@ -24,6 +26,15 @@ class Session
     public function deleteSession($key)
     {
         $_SESSION = array();
+    }
+
+    public function issetSession($key)
+    {
+        if (isset($_SESSION[$key])) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public function destroySession()

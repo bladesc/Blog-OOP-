@@ -49,6 +49,5 @@ class User
     function validateData($data)
     {
         return htmlspecialchars(trim($data));
-
     }
 }

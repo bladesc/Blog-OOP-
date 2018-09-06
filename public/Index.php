@@ -7,6 +7,15 @@ use Blog\User;
 use Blog\Login;
 use Blog\Session;
 
+//if logged
+$session = new Session;
+$login = new Login($session);
+$isLogged = $login->isLogged();
+if ($isLogged) {
+   print_r($isLogged);
+};
+
+
 //entries
 $db = new Db;
 $entry = new Entry($db);

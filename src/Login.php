@@ -26,20 +26,34 @@ class Login
 
         $this->db->prepare("SELECT * FROM users WHERE email = '{$this->user->getEmail()}'");
         $this->db->execute();
+
         if ($this->db->getRowCount() === 0) {
             return 0;
-        }
-        else {
+        } else {
             $user = $this->db->getRecords();
-            $this->session->setSession('userId', $user['id']);
-            return $user;
+            $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
+            if (password_verify($this->user->getPassword(), $user['password'])) {
+                $this->session->setSession('loggedUser', $userSession);
+                return $user;
+            } else {
+                $this->session->setSession('message', 'Login error');
+                return 0;
+            }
         }
-
     }
 
     public function logOut()
     {
         $this->session->deleteSession('userId');
         $this->session->destroySession();
+    }
+
+    public function isLogged()
+    {
+        if ($this->session->issetSession('loggedUser')) {
+            return $_SESSION['loggedUser'];
+        } else {
+            return 0;
+        }
     }
 }
