@@ -31,6 +31,11 @@ class Entry
         return $this->db->getRecords();
     }
 
+    public function addEntry(Category $category)
+    {
+
+    }
+
     public function deleteEntry(int $id)
     {
     }

@@ -14,6 +14,14 @@ class Login
     private $user;
     private $session;
 
+    private $errorMessages = [];
+
+    private $textMessages = [
+        "E-mail doesn't exist",
+        "Incorrect username",
+        "Incorrect password"
+    ];
+
     public function __construct(Session $session)
     {
         $this->session = $session;
@@ -28,18 +36,28 @@ class Login
         $this->db->execute();
 
         if ($this->db->getRowCount() === 0) {
-            return false;
+            $this->addMessage($this->textMessages[0]);
         } else {
             $user = $this->db->getRecords();
-            $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
             if (password_verify($this->user->getPassword(), $user['password'])) {
+
+                $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
                 $this->session->setSession('loggedUser', $userSession);
                 return $user;
             } else {
-                $this->session->setSession('message', 'Login error');
-                return false;
+                $this->addMessage($this->textMessages[2]);
             }
         }
+    }
+
+    public function addMessage($message)
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    public function showMessage()
+    {
+        return $this->errorMessages;
     }
 
     public function logOut()
