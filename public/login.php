@@ -32,10 +32,8 @@ if (isset($_POST['login'])) {
     $user->setPassword($password);
 
     $session = new Session;
-    $login = new Login($session);
-
     $db = new Db;
-    $login->logIn($db, $user);
+    $login = new Login($user, $db, $session);
 
     if (!empty($login->showMessage())) {
         $redirect = new Redirect;

@@ -8,6 +8,24 @@ use Blog\Validate;
 use Blog\Redirect;
 
 
+$validate = new Validate;
+$login = $validate->validateLogin($_POST['login']);
+$email = $validate->validateEmail($_POST['email']);
+$password = $validate->validatePassword($_POST['password']);
+
+/*if (!empty($validate->showMessage())) {
+    $redirect = new Redirect;
+    $session = new Session;
+    $redirect->redirectBack($validate->showMessage(), $session);
+}*/
+
+$user = new User;
+$user->setLogin($login);
+$user->setEmail($email);
+$user->setPassword($password);
+
+$db = new Db;
+$register = new Register($user, $d, $session);
 
 
 ?>

@@ -21,16 +21,15 @@ class Login
         "Incorrect password"
     ];
 
-    public function __construct(Session $session)
+    public function __construct(User $user,Db $db, Session $session)
     {
         $this->session = $session;
-    }
-
-    public function logIn(Db $db, User $user)
-    {
         $this->db = $db;
         $this->user = $user;
+    }
 
+    public function logIn()
+    {
         $this->db->prepare("SELECT * FROM users WHERE email = '{$this->user->getEmail()}'");
         $this->db->execute();
 

@@ -14,11 +14,14 @@ class Validate
 
     private $textMessages = [
         "Incorrect e-mail",
-        "Incorrect password"
+        "Incorrect password",
+        "Incorrect login"
     ];
 
     public function validateEmail($value)
     {
+        $value = $this->validateValue($value);
+
         $pattern = '/^([a-zA-Z]|-|_)+@[a-zA-Z]+\.[a-zA-Z]+$/';
         if (preg_match($pattern, $value)) {
             return $value;
@@ -28,8 +31,23 @@ class Validate
         }
     }
 
+    public function validateLogin($value)
+    {
+        $value = $this->validateValue($value);
+
+        $pattern = '/^.{2,20}';
+        if (preg_match($pattern, $value)) {
+            return $value;
+        } else {
+            $this->addMessage($this->textMessages[2]);
+            return false;
+        }
+    }
+
     public function validatePassword($value)
     {
+        $value = $this->validateValue($value);
+
         $pattern = '/^([a-zA-Z]|[0-9]){5,12}$/';
         if (preg_match($pattern, $value)) {
             return $value;

@@ -12,4 +12,19 @@ namespace Blog;
 class Register
 {
     private $db;
+    private $user;
+    private $session;
+
+    public function __construct(Db $db, User $user, Session $session)
+    {
+        $this->db = $db;
+        $this->user = $user;
+        $this->session = $session;
+    }
+
+    public function register()
+    {
+
+    }
+
 }
