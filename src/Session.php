@@ -25,7 +25,7 @@ class Session
 
     public function deleteSession($key)
     {
-        $_SESSION = array();
+        unset($_SESSION[$key]);
     }
 
     public function issetSession($key)

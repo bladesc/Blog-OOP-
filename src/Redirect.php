@@ -20,8 +20,11 @@ class Redirect
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
-    public function redirectTo($value = null)
+    public function redirectTo($to, $value = null,  Session $session = null)
     {
-
+        if (isset($value)) {
+            $session->setSession('messages', $value);
+        }
+        header('Location: ' . $to);
     }
 }

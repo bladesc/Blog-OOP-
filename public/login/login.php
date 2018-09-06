@@ -1,16 +1,12 @@
 <?php
-require __DIR__ .'/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
+
 use Blog\Db;
 use Blog\Login;
 use Blog\Session;
 use Blog\User;
 use Blog\Validate;
 use Blog\Redirect;
-
-$session = new Session;
-if ($session->issetSession('messages')) {
-    $session->deleteSession('messages');
-}
 
 if (isset($_POST['submit'])) {
     $validate = new Validate;
@@ -38,12 +34,3 @@ if (isset($_POST['submit'])) {
         $redirect->redirectBack($login->showMessage(), $session);
     }
 }
-
-?>
-
-
-<form method="POST" action="">
-    <input type="email" name="email" placeholder="Your e-mail" required>
-    <input type="password" name="password" required>
-    <button type="submit" name="submit">Zaloguj</button>
-</form>
