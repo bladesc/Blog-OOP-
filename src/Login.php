@@ -28,7 +28,7 @@ class Login
         $this->db->execute();
 
         if ($this->db->getRowCount() === 0) {
-            return 0;
+            return false;
         } else {
             $user = $this->db->getRecords();
             $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
@@ -37,7 +37,7 @@ class Login
                 return $user;
             } else {
                 $this->session->setSession('message', 'Login error');
-                return 0;
+                return false;
             }
         }
     }
@@ -53,7 +53,7 @@ class Login
         if ($this->session->issetSession('loggedUser')) {
             return $_SESSION['loggedUser'];
         } else {
-            return 0;
+            return false;
         }
     }
 }

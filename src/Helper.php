@@ -12,7 +12,7 @@ class Helper
 {
     public static function validateEmail($email)
     {
-        $pattern = '/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/';
+        $pattern = '/^([a-zA-Z]|-|_)+@[a-zA-Z]+\.[a-zA-Z]+$/';
         if (preg_match($pattern, $email)) {
             return true;
         } else {

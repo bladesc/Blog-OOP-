@@ -31,9 +31,9 @@ class Session
     public function issetSession($key)
     {
         if (isset($_SESSION[$key])) {
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
 
