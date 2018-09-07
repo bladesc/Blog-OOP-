@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/frontend/authorization/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="Db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1766">
-              <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+            <state relative-caret-position="490">
+              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -86,8 +84,25 @@
       <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="-1674">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#123#181#0#PHP" />
+                <element signature="e#203#254#0#PHP" />
+                <element signature="e#278#340#0#PHP" />
+                <element signature="e#368#434#0#PHP" />
+                <element signature="e#473#546#0#PHP" />
+                <element signature="e#668#764#0#PHP" />
+                <element signature="e#676#740#0#PHP" />
+                <element signature="e#1428#1502#0#PHP" />
+                <element signature="e#1791#1964#0#PHP" />
+                <element signature="e#2144#2291#0#PHP" />
+                <element signature="e#2537#2692#0#PHP" />
+                <element signature="e#2913#3005#0#PHP" />
+                <element signature="e#3160#3289#0#PHP" />
+                <element signature="e#3510#3592#0#PHP" />
+                <element signature="e#4025#4089#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -294,12 +309,12 @@
       <workItem from="1535981164177" duration="1909000" />
       <workItem from="1536188717227" duration="10199000" />
       <workItem from="1536257719191" duration="30377000" />
-      <workItem from="1536345797752" duration="3875000" />
+      <workItem from="1536345797752" duration="4889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69548000" />
+    <option name="totallyTimeSpent" value="70562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
@@ -622,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1766">
-          <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -636,10 +644,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="-1674">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#123#181#0#PHP" />
+            <element signature="e#203#254#0#PHP" />
+            <element signature="e#278#340#0#PHP" />
+            <element signature="e#368#434#0#PHP" />
+            <element signature="e#473#546#0#PHP" />
+            <element signature="e#668#764#0#PHP" />
+            <element signature="e#676#740#0#PHP" />
+            <element signature="e#1428#1502#0#PHP" />
+            <element signature="e#1791#1964#0#PHP" />
+            <element signature="e#2144#2291#0#PHP" />
+            <element signature="e#2537#2692#0#PHP" />
+            <element signature="e#2913#3005#0#PHP" />
+            <element signature="e#3160#3289#0#PHP" />
+            <element signature="e#3510#3592#0#PHP" />
+            <element signature="e#4025#4089#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
