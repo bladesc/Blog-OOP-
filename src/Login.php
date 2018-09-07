@@ -52,16 +52,11 @@ class Login
      * Login constructor.
      *
      * @param Session $session
-     * @param Db $db
      */
-    public function __construct(Session $session, Db $db)
+    public function __construct(Session $session)
     {
         if ($this->session == null) {
             $this->session = $session;
-        }
-
-        if ($this->db == null) {
-            $this->db = $db;
         }
     }
 
@@ -69,9 +64,14 @@ class Login
      * It login user
      *
      * @param User $user
+     * @param Db $db
      */
-    public function logIn(User $user): void
+    public function logIn(User $user, Db $db): void
     {
+        if ($this->db == null) {
+            $this->db = $db;
+        }
+
         $this->user = $user;
 
         if ($this->userExist('users', $this->user->getEmail())) {

@@ -33,8 +33,8 @@ if (isset($_POST['login'])) {
 
     $session = new Session;
     $db = new Db;
-    $login = new Login($session, $db);
-    $login->logIn($user);
+    $login = new Login($session);
+    $login->logIn($user, $db);
 
     if (!empty($login->showMessage())) {
         $session = new Session;
