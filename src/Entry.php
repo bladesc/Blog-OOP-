@@ -6,6 +6,8 @@
  * Time: 01:15
  */
 
+declare(strict_types=1);
+
 namespace Blog;
 
 class Entry

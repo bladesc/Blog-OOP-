@@ -6,6 +6,8 @@
  * Time: 22:04
  */
 
+declare(strict_types=1);
+
 namespace Blog;
 
 include (__DIR__.'/../config/config.php');

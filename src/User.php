@@ -6,6 +6,8 @@
  * Time: 02:01
  */
 
+declare(strict_types=1);
+
 namespace Blog;
 
 class User

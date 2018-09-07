@@ -6,6 +6,8 @@
  * Time: 03:04
  */
 
+declare(strict_types=1);
+
 namespace Blog;
 
 

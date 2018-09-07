@@ -6,6 +6,8 @@
  * Time: 03:32
  */
 
+declare(strict_types=1);
+
 namespace Blog;
 
 class Validate

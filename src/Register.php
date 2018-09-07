@@ -5,6 +5,7 @@
  * Date: 06.09.2018
  * Time: 03:03
  */
+declare(strict_types=1);
 
 namespace Blog;
 

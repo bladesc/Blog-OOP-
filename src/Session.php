@@ -5,6 +5,9 @@
  * Date: 03.09.2018
  * Time: 02:01
  */
+
+declare(strict_types=1);
+
 namespace Blog;
 
 class Session
