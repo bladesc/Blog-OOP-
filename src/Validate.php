@@ -75,7 +75,7 @@ class Validate
     {
         return htmlspecialchars(trim($value));
     }
-    
+
     public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
