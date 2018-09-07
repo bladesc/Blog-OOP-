@@ -25,9 +25,6 @@ $oneEntry = $entry->getEntry(2);
 //CRUD
 //delete
 if (isset($_POST['delete'])) {
-
-    print_r($_POST);
-
     $validate = new Validate();
     $id = $validate->validateId($_POST['id']);
 
@@ -44,8 +41,8 @@ if (isset($_POST['delete'])) {
         $session = new Session;
         Redirect::redirectBack($entry->showMessage(), $session);
     }
-
 }
+
 //modify
 if (isset($_POST['modify'])) {
     echo 'modify';
@@ -62,6 +59,7 @@ if (isset($_POST['modify'])) {
     <form method="POST" action="">
         <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
         <button type="submit" name="delete">Delete</button>
+        <button type="submit" name="modify">Modify</button>
     </form>
 <?php endforeach; ?>
 
