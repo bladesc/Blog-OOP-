@@ -53,6 +53,11 @@ class Db
 
     public function getRecords(): array
     {
+        return $this->stmt->fetchAll();
+    }
+
+    public function getRecord(): array
+    {
         return $this->stmt->fetch();
     }
 

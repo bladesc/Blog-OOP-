@@ -37,7 +37,7 @@ class Login
             if ($this->db->getRowCount() === 0) {
                 $this->addMessage($this->textMessages[0]);
             } else {
-                $user = $this->db->getRecords();
+                $user = $this->db->getRecord();
                 if (password_verify($this->user->getPassword(), $user['password'])) {
                     $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
                     $this->session->setSession('loggedUser', $userSession);

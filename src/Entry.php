@@ -20,15 +20,18 @@ class Entry
     public function getEntries(): array
     {
         $this->db->prepare('select * from entries');
-        $this->db->execute();
-        return $this->db->getRecords();
+        if ($this->db->execute()) {
+            return $this->db->getRecords();
+        }
+
     }
 
-    public function getEntry(): array
+    public function getEntry(int $id): array
     {
-        $this->db->prepare('select * from entries where id=1');
-        $this->db->execute();
-        return $this->db->getRecords();
+        $this->db->prepare("select * from entries where id = $id");
+        if ($this->db->execute()) {
+            return $this->db->getRecord();
+        }
     }
 
     public function addEntry(Category $category)
