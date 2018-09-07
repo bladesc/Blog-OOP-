@@ -30,14 +30,14 @@ class Login
     private $session;
 
     /**
-     * Array width messages
+     * Array of messages
      *
      * @var array
      */
     private $errorMessages = [];
 
     /**
-     * Array with body of messages
+     * Array with bodies of messages
      *
      * @var array
      */
@@ -124,7 +124,7 @@ class Login
      * @param string $email
      * @return bool
      */
-    public function userExist(string $table, string $email)
+    public function userExist(string $table, string $email): bool
     {
         $this->db->prepare("SELECT * FROM $table WHERE email = '$email'");
         $this->db->execute();
