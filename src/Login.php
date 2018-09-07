@@ -18,10 +18,11 @@ class Login
 
     private $textMessages = [
         "E-mail doesn't exist",
-        "Incorrect password"
+        "Incorrect password",
+        "Login successful"
     ];
 
-    public function __construct(User $user,Db $db, Session $session)
+    public function __construct(User $user, Db $db, Session $session)
     {
         $this->session = $session;
         $this->db = $db;
@@ -31,19 +32,19 @@ class Login
     public function logIn()
     {
         $this->db->prepare("SELECT * FROM users WHERE email = '{$this->user->getEmail()}'");
-        $this->db->execute();
 
-        if ($this->db->getRowCount() === 0) {
-            $this->addMessage($this->textMessages[0]);
-        } else {
-            $user = $this->db->getRecords();
-            if (password_verify($this->user->getPassword(), $user['password'])) {
-
-                $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
-                $this->session->setSession('loggedUser', $userSession);
-                return $user;
+        if ($this->db->execute()) {
+            if ($this->db->getRowCount() === 0) {
+                $this->addMessage($this->textMessages[0]);
             } else {
-                $this->addMessage($this->textMessages[1]);
+                $user = $this->db->getRecords();
+                if (password_verify($this->user->getPassword(), $user['password'])) {
+                    $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
+                    $this->session->setSession('loggedUser', $userSession);
+                    $this->addMessage($this->textMessages[2]);
+                } else {
+                    $this->addMessage($this->textMessages[1]);
+                }
             }
         }
     }

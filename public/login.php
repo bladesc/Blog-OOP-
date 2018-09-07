@@ -22,9 +22,9 @@ if (isset($_POST['login'])) {
     $password = $validate->validatePassword($_POST['password']);
 
     if (!empty($validate->showMessage())) {
-        $redirect = new Redirect;
+
         $session = new Session;
-        $redirect->redirectBack($validate->showMessage(), $session);
+        Redirect::redirectBack($validate->showMessage(), $session);
     }
 
     $user = new User;
@@ -34,11 +34,11 @@ if (isset($_POST['login'])) {
     $session = new Session;
     $db = new Db;
     $login = new Login($user, $db, $session);
+    $login->logIn();
 
     if (!empty($login->showMessage())) {
-        $redirect = new Redirect;
         $session = new Session;
-        $redirect->redirectBack($login->showMessage(), $session);
+        Redirect::redirectBack($login->showMessage(), $session);
     }
 }
 
@@ -47,8 +47,7 @@ if (isset($_POST['logout'])) {
     $session = new Session;
     if ($session->issetSession('loggedUser')) {
         $session->deleteSession('loggedUser');
-        $redirect = new Redirect;
-        $redirect->redirectBack();
+        Redirect::redirectBack();
     }
 }
 

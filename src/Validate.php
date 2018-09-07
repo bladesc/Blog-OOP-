@@ -35,7 +35,7 @@ class Validate
     {
         $value = $this->validateValue($value);
 
-        $pattern = '/^.{2,20}';
+        $pattern = '/^.{2,20}$/';
         if (preg_match($pattern, $value)) {
             return $value;
         } else {
@@ -48,7 +48,7 @@ class Validate
     {
         $value = $this->validateValue($value);
 
-        $pattern = '/^([a-zA-Z]|[0-9]){5,12}$/';
+        $pattern = '/^([a-zA-Z]|[0-9]){5,15}$/';
         if (preg_match($pattern, $value)) {
             return $value;
         } else {

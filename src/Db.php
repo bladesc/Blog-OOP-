@@ -41,10 +41,11 @@ class Db
         }
     }
 
-    public function execute(): void
+    public function execute()
     {
         try {
-            $this->stmt->execute();
+            $result = $this->stmt->execute();
+            return $result;
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }

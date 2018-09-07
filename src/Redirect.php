@@ -12,7 +12,7 @@ namespace Blog;
 class Redirect
 {
 
-    public function redirectBack($value = null, Session $session = null)
+    public static function redirectBack($value = null, Session $session = null)
     {
         if (isset($value)) {
             $session->setSession('messages', $value);
@@ -20,7 +20,7 @@ class Redirect
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
-    public function redirectTo($to, $value = null,  Session $session = null)
+    public static function redirectTo($to, $value = null,  Session $session = null)
     {
         if (isset($value)) {
             $session->setSession('messages', $value);

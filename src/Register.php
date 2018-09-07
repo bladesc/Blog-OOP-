@@ -15,7 +15,14 @@ class Register
     private $user;
     private $session;
 
-    public function __construct(Db $db, User $user, Session $session)
+    private $errorMessages = [];
+
+    private $textMessages = [
+        "E-mail exist in base",
+        "Register successful"
+    ];
+
+    public function __construct(User $user, Db $db, Session $session)
     {
         $this->db = $db;
         $this->user = $user;
@@ -24,7 +31,39 @@ class Register
 
     public function register()
     {
+        $password = password_hash($this->user->getPassword(), PASSWORD_BCRYPT);
+
+        if ($this->issetEmail($this->user->getEmail())) {
+            $this->db->prepare("INSERT INTO users (email, password, login) 
+                      VALUES ('".$this->user->getEmail()."','$password', '".$this->user->getLogin()."')");
+            if ($this->db->execute()) {
+                $this->addMessage($this->textMessages[1]);
+            }
+        } else {
+            $this->addMessage($this->textMessages[0]);
+        }
 
     }
 
+    public function issetEmail($email)
+    {
+        $this->db->prepare("SELECT * FROM users WHERE email = '{$email}'");
+        if ($this->db->execute()) {
+            if ($this->db->getRowCount() > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    public function addMessage($message)
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    public function showMessage()
+    {
+        return $this->errorMessages;
+    }
 }
