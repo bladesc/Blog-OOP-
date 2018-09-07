@@ -13,5 +13,6 @@ namespace Blog;
 
 class Category
 {
-
+    private $id;
+    private $name;
 }

@@ -12,8 +12,18 @@ namespace Blog;
 
 class Validate
 {
+    /**
+     * Array of messages
+     *
+     * @var array
+     */
     private $errorMessages = [];
 
+    /**
+     * Array with bodies of messages
+     *
+     * @var array
+     */
     private $textMessages = [
         "Incorrect e-mail",
         "Incorrect password",
@@ -21,6 +31,12 @@ class Validate
         "Incorrect id"
     ];
 
+    /**
+     * It validates passed value
+     *
+     * @param $value
+     * @return bool|string
+     */
     public function validateEmail($value)
     {
         $value = $this->validateValue($value);
@@ -34,11 +50,17 @@ class Validate
         }
     }
 
+    /**
+     * It validate passed login (only alphabetic and numeric characters and length between 2-20)
+     *
+     * @param $value
+     * @return bool|string
+     */
     public function validateLogin($value)
     {
         $value = $this->validateValue($value);
 
-        $pattern = '/^.{2,20}$/';
+        $pattern = '/^([a-zA-Z]|[0-9]){2,20}$/';
         if (preg_match($pattern, $value)) {
             return $value;
         } else {
@@ -47,6 +69,11 @@ class Validate
         }
     }
 
+    /**
+     * It validates passed password (only alphabetic and numeric characters and length between 5-15)
+     * @param $value
+     * @return bool|string
+     */
     public function validatePassword($value)
     {
         $value = $this->validateValue($value);
@@ -60,6 +87,12 @@ class Validate
         }
     }
 
+    /**
+     * It validate passed id (only numeric and characters length between 2-10)
+     *
+     * @param $value
+     * @return bool|string
+     */
     public function validateId($value)
     {
         $value = $this->validateValue($value);
@@ -73,16 +106,32 @@ class Validate
         }
     }
 
+    /**
+     * It validate passed value (cuts spaces from begin and end of value, changes html chars
+     *
+     * @param $value
+     * @return string
+     */
     public function validateValue($value)
     {
         return htmlspecialchars(trim($value));
     }
 
+    /**
+     * It adds messages to array
+     *
+     * @param string $message
+     */
     public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
+    /**
+     * It shows messages
+     *
+     * @return array
+     */
     public function showMessage(): array
     {
         return $this->errorMessages;

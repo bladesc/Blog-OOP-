@@ -16,6 +16,8 @@ class Comment
     private $id;
     private $author;
     private $content;
+    private $createdAt;
+
     private $db;
 
 

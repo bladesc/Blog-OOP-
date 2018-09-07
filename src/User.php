@@ -12,6 +12,7 @@ namespace Blog;
 
 class User
 {
+    private $id;
     private $login;
     private $email;
     private $password;
@@ -44,6 +45,27 @@ class User
     public function getLogin()
     {
         return $this->login;
+    }
+
+    public function getUsers()
+    {
+    }
+
+    public function getUser()
+    {
+    }
+
+    public function createUser()
+    {
+    }
+
+    public function updateUser()
+    {
+    }
+
+    public function deleteUser()
+    {
+
     }
 
 }

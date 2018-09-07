@@ -12,8 +12,6 @@ namespace Blog;
 
 class Session
 {
-    private $sessionKey;
-
     public function __construct()
     {
         if (session_status() == PHP_SESSION_NONE) {
@@ -21,26 +19,41 @@ class Session
         }
     }
 
-    public function setSession($key, $value)
+    /**
+     * It sets session for passed key and value
+     *
+     * @param $key
+     * @param $value
+     */
+    public function setSession($key, $value): void
     {
-        $this->sessionKey = $_SESSION[$key] = $value;
+        $_SESSION[$key] = $value;
     }
 
-    public function deleteSession($key)
+    /**
+     * It deletes session for passed key
+     * @param $key
+     */
+    public function deleteSession($key): void
     {
         unset($_SESSION[$key]);
     }
 
-    public function issetSession($key)
+    /**
+     * It checks that session for passed key exist
+     *
+     * @param $key
+     * @return bool
+     */
+    public function issetSession($key): bool
     {
-        if (isset($_SESSION[$key])) {
-            return true;
-        } else {
-            return false;
-        }
+        return isset($_SESSION[$key]) ? true : false;
     }
 
-    public function destroySession()
+    /**
+     * It destroys session
+     */
+    public function destroySession(): void
     {
         session_destroy();
     }

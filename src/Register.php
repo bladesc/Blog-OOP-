@@ -76,7 +76,6 @@ class Register
         } else {
             $this->addMessage($this->textMessages[0]);
         }
-
     }
 
     /**

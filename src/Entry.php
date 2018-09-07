@@ -12,6 +12,13 @@ namespace Blog;
 
 class Entry
 {
+    private $id;
+    private $title;
+    private $content;
+    private $category;
+    private $author;
+    private $createdAt;
+
     private $db;
 
     private $errorMessages = [];
@@ -43,7 +50,7 @@ class Entry
         }
     }
 
-    public function addEntry(Category $category)
+    public function createEntry(Category $category)
     {
 
     }
@@ -58,7 +65,7 @@ class Entry
         }
     }
 
-    public function modifyEntry(int $id)
+    public function updateEntry(int $id)
     {
     }
 
