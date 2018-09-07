@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/Index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,14 +62,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
               <folding>
-                <element signature="e#53#65#0#PHP" expanded="true" />
+                <element signature="e#56#68#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -115,15 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/User.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -158,7 +159,6 @@
         <option value="$PROJECT_DIR$/../zadanie03092018v2/src/Route.php" />
         <option value="$PROJECT_DIR$/../zadanie03092018v2/index.php" />
         <option value="$PROJECT_DIR$/src/Logn.php" />
-        <option value="$PROJECT_DIR$/src/Helper.php" />
         <option value="$PROJECT_DIR$/public/authorization.php" />
         <option value="$PROJECT_DIR$/public/login/login.php" />
         <option value="$PROJECT_DIR$/public/register.php" />
@@ -180,6 +180,7 @@
         <option value="$PROJECT_DIR$/public/Index.php" />
         <option value="$PROJECT_DIR$/public/frontend/login-bar.php" />
         <option value="$PROJECT_DIR$/public/frontend/Index.php" />
+        <option value="$PROJECT_DIR$/src/Helper.php" />
       </list>
     </option>
   </component>
@@ -314,12 +315,12 @@
       <workItem from="1535981164177" duration="1909000" />
       <workItem from="1536188717227" duration="10199000" />
       <workItem from="1536257719191" duration="30377000" />
-      <workItem from="1536345797752" duration="11576000" />
+      <workItem from="1536345797752" duration="12265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77249000" />
+    <option name="totallyTimeSpent" value="77938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
@@ -390,13 +391,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -634,16 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/backend/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#53#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-110">
@@ -697,13 +681,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
+    <entry file="file://$PROJECT_DIR$/public/backend/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="-242">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding>
             <element signature="e#53#65#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#56#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
         </state>
       </provider>
     </entry>

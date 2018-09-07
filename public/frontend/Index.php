@@ -4,6 +4,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 use Blog\Db;
 use Blog\Entry;
+use Blog\Helper;
 
 //#ENTRIES#
 $db = new Db;
@@ -17,7 +18,7 @@ $entries = $entry->getEntries();
 <?php foreach ($entries as $entry): ?>
     <div><?= $entry['id'] ?></div>
     <div><?= $entry['title'] ?></div>
-    <div><?= $entry['description'] ?></div>
+    <div><?= Helper::trimText($entry['description'], 2) ?></div>
     <div><?= $entry['created_at'] ?></div>
     <div><?= $entry['modified_at'] ?></div>
     <div>
