@@ -22,7 +22,7 @@ class Login
         "Login successful"
     ];
 
-    public function __construct(User $user, Db $db, Session $session)
+    public function __construct(User $user = null, Db $db = null, Session $session)
     {
         $this->session = $session;
         $this->db = $db;

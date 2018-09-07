@@ -9,7 +9,6 @@ use Blog\Validate;
 use Blog\Redirect;
 
 
-
 //#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {

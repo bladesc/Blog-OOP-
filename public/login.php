@@ -45,8 +45,9 @@ if (isset($_POST['login'])) {
 //#########LOGOUT
 if (isset($_POST['logout'])) {
     $session = new Session;
-    if ($session->issetSession('loggedUser')) {
-        $session->deleteSession('loggedUser');
+    $login = new Login(null,null, $session);
+    if ($login->isLogged()) {
+        $login->logOut();
         Redirect::redirectBack();
     }
 }
