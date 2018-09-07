@@ -50,7 +50,7 @@ class Login
     }
 
 
-    public function logOut()
+    public function logOut(): void
     {
         $this->session->deleteSession('userId');
         $this->session->destroySession();
@@ -65,12 +65,12 @@ class Login
         }
     }
 
-    public function addMessage($message)
+    public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
-    public function showMessage()
+    public function showMessage(): array
     {
         return $this->errorMessages;
     }

@@ -71,18 +71,18 @@ class Validate
         }
     }
 
-    public function addMessage($message)
+    public function validateValue($value)
+    {
+        return htmlspecialchars(trim($value));
+    }
+    
+    public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
-    public function showMessage()
+    public function showMessage(): array
     {
         return $this->errorMessages;
-    }
-
-    public function validateValue($value)
-    {
-        return htmlspecialchars(trim($value));
     }
 }

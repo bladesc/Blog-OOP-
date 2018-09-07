@@ -24,7 +24,7 @@ class Entry
         $this->db = $db;
     }
 
-    public function getEntries(): array
+    public function getEntries()
     {
         $this->db->prepare('select * from entries');
         if ($this->db->execute()) {
@@ -60,14 +60,13 @@ class Entry
     {
     }
 
-    public function addMessage($message)
+    public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
-    public function showMessage()
+    public function showMessage(): array
     {
         return $this->errorMessages;
     }
-
 }

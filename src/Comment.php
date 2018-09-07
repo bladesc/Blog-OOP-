@@ -25,7 +25,7 @@ class Comment
         $this->db = $db;
     }
 
-    public function setComment($comment)
+    public function setComment(string $comment): void
     {
         $this->comment = $comment;
     }
@@ -35,7 +35,7 @@ class Comment
 
     }
 
-    public function getComments($idUser = null)
+    public function getComments(int $idUser = null)
     {
         $query = "SELECT * FROM comments";
         if ($idUser) {
@@ -47,7 +47,7 @@ class Comment
         }
     }
 
-    public function getComment($id)
+    public function getComment(int $id)
     {
         $this->db->prepare("SELECT * FROM comments WHERE id = $id");
         if ($this->db->execute()) {
@@ -65,12 +65,12 @@ class Comment
 
     }
 
-    public function addMessage($message)
+    public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
-    public function showMessage()
+    public function showMessage(): array
     {
         return $this->errorMessages;
     }

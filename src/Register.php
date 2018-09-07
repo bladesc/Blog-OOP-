@@ -45,7 +45,7 @@ class Register
 
     }
 
-    public function issetEmail($email)
+    public function issetEmail(string $email)
     {
         $this->db->prepare("SELECT * FROM users WHERE email = '{$email}'");
         if ($this->db->execute()) {
@@ -57,12 +57,12 @@ class Register
         }
     }
 
-    public function addMessage($message)
+    public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
-    public function showMessage()
+    public function showMessage(): array
     {
         return $this->errorMessages;
     }
