@@ -20,7 +20,12 @@ $entries = $entry->getEntries();
     <div><?= $entry['description'] ?></div>
     <div><?= $entry['created_at'] ?></div>
     <div><?= $entry['modified_at'] ?></div>
-    <div></div>
+    <div>
+        <form method="get" action="entry/entry-view.php">
+            <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
+            <button type="submit">More</button>
+        </form>
+    </div>
 <?php endforeach; ?>
 
 

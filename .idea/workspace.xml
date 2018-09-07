@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/frontend/Index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/login-bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/authorization/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/entry/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/entry/entry-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/Index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="396">
+              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="e#53#65#0#PHP" expanded="true" />
               </folding>
@@ -80,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-bar.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/login-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="462">
+              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
               <folding>
                 <element signature="e#6#23#0#PHP" expanded="true" />
               </folding>
@@ -185,8 +178,8 @@
         <option value="$PROJECT_DIR$/src/Login.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/login.php" />
         <option value="$PROJECT_DIR$/public/Index.php" />
-        <option value="$PROJECT_DIR$/public/frontend/Index.php" />
         <option value="$PROJECT_DIR$/public/frontend/login-bar.php" />
+        <option value="$PROJECT_DIR$/public/frontend/Index.php" />
       </list>
     </option>
   </component>
@@ -321,12 +314,12 @@
       <workItem from="1535981164177" duration="1909000" />
       <workItem from="1536188717227" duration="10199000" />
       <workItem from="1536257719191" duration="30377000" />
-      <workItem from="1536345797752" duration="11279000" />
+      <workItem from="1536345797752" duration="11576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76952000" />
+    <option name="totallyTimeSpent" value="77249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
@@ -658,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#53#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -706,10 +689,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/login-bar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="462">
+          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
           <folding>
             <element signature="e#6#23#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#53#65#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
