@@ -12,6 +12,13 @@ class Entry
 {
     private $db;
 
+    private $errorMessages = [];
+
+    private $textMessages = [
+        "Deleted successful",
+        "Deleted error"
+    ];
+
     public function __construct(Db $db)
     {
         $this->db = $db;
@@ -41,11 +48,26 @@ class Entry
 
     public function deleteEntry(int $id)
     {
+        $this->db->prepare("DELETE FROM entries where id = $id");
+        if ($this->db->execute()) {
+            $this->addMessage($this->textMessages[0]);
+        } else {
+            $this->addMessage($this->textMessages[1]);
+        }
     }
 
     public function modifyEntry(int $id)
     {
     }
 
+    public function addMessage($message)
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    public function showMessage()
+    {
+        return $this->errorMessages;
+    }
 
 }

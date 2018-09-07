@@ -49,15 +49,6 @@ class Login
         }
     }
 
-    public function addMessage($message)
-    {
-        $this->errorMessages[] = $message;
-    }
-
-    public function showMessage()
-    {
-        return $this->errorMessages;
-    }
 
     public function logOut()
     {
@@ -72,5 +63,15 @@ class Login
         } else {
             return false;
         }
+    }
+
+    public function addMessage($message)
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    public function showMessage()
+    {
+        return $this->errorMessages;
     }
 }

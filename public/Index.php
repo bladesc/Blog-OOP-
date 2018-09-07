@@ -4,6 +4,16 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Blog\Db;
 use Blog\Entry;
+use Blog\Validate;
+use Blog\Session;
+use Blog\Redirect;
+
+//#########SESSION MESSAGES
+$session = new Session;
+if ($session->issetSession('messages')) {
+    print_r($_SESSION['messages']);
+    $session->deleteSession('messages');
+}
 
 //entries
 $db = new Db;
@@ -15,7 +25,26 @@ $oneEntry = $entry->getEntry(2);
 //CRUD
 //delete
 if (isset($_POST['delete'])) {
-    echo 'delete';
+
+    print_r($_POST);
+
+    $validate = new Validate();
+    $id = $validate->validateId($_POST['id']);
+
+    if (!empty($validate->showMessage())) {
+        $session = new Session;
+        Redirect::redirectBack($validate->showMessage(), $session);
+    }
+
+    $db = new Db;
+    $entry = new Entry($db);
+    $entry->deleteEntry($id);
+
+    if (!empty($entry->showMessage())) {
+        $session = new Session;
+        Redirect::redirectBack($entry->showMessage(), $session);
+    }
+
 }
 //modify
 if (isset($_POST['modify'])) {
@@ -30,10 +59,9 @@ if (isset($_POST['modify'])) {
     <div><?= $entry['description'] ?></div>
     <div><?= $entry['created_at'] ?></div>
     <div><?= $entry['modified_at'] ?></div>
-    <form method="post" action="">
-        <input type="hidden" value="<?= $entry['id'] ?>" required>
-        <button name="delete">Delete</button>
-        <button name="modify">Modify</button>
+    <form method="POST" action="">
+        <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
+        <button type="submit" name="delete">Delete</button>
     </form>
 <?php endforeach; ?>
 

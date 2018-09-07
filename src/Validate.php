@@ -15,7 +15,8 @@ class Validate
     private $textMessages = [
         "Incorrect e-mail",
         "Incorrect password",
-        "Incorrect login"
+        "Incorrect login",
+        "Incorrect id"
     ];
 
     public function validateEmail($value)
@@ -53,6 +54,19 @@ class Validate
             return $value;
         } else {
             $this->addMessage($this->textMessages[1]);
+            return false;
+        }
+    }
+
+    public function validateId($value)
+    {
+        $value = $this->validateValue($value);
+
+        $pattern = '/^[0-9]{0,10}$/';
+        if (preg_match($pattern, $value)) {
+            return $value;
+        } else {
+            $this->addMessage($this->textMessages[3]);
             return false;
         }
     }
