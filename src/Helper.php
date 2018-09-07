@@ -19,6 +19,16 @@ class Helper
      */
     public static function trimText(string $text, int $characters): string
     {
-        return $text = substr($text, 0, $characters) . " ...";
+        return substr($text, 0, $characters) . " ...";
+    }
+
+    public static function dateOutput($date, $typeOutput = null)
+    {
+        if (isset($date)) {
+            return date_format(date_create($date), 'Y-m-d');
+        } else {
+            return $date;
+        }
+
     }
 }

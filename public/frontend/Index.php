@@ -19,8 +19,8 @@ $entries = $entry->getEntries();
     <div><?= $entry['id'] ?></div>
     <div><?= $entry['title'] ?></div>
     <div><?= Helper::trimText($entry['description'], 2) ?></div>
-    <div><?= $entry['created_at'] ?></div>
-    <div><?= $entry['modified_at'] ?></div>
+    <div><?= Helper::dateOutput($entry['created_at']) ?></div>
+    <div><?= Helper::dateOutput($entry['modified_at']) ?></div>
     <div>
         <form method="get" action="entry/entry-view.php">
             <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
