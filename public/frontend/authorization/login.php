@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 use Blog\Db;
 use Blog\Login;
 use Blog\Session;
@@ -33,8 +33,8 @@ if (isset($_POST['login'])) {
 
     $session = new Session;
     $db = new Db;
-    $login = new Login($user, $db, $session);
-    $login->logIn();
+    $login = new Login($session, $db);
+    $login->logIn($user);
 
     if (!empty($login->showMessage())) {
         $session = new Session;
@@ -45,9 +45,8 @@ if (isset($_POST['login'])) {
 //#########LOGOUT
 if (isset($_POST['logout'])) {
     $session = new Session;
-    $login = new Login(null,null, $session);
-    if ($login->isLogged()) {
-        $login->logOut();
+    if (Login::isLogged($session)) {
+        Login::logOut($session);
         Redirect::redirectBack();
     }
 }

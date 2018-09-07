@@ -11,8 +11,11 @@ namespace Blog;
 
 class Comment
 {
-    private $comment;
+    private $id;
+    private $author;
+    private $content;
     private $db;
+
 
     private $errorMessages = [];
 

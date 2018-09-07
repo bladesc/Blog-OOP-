@@ -22,43 +22,73 @@ class Login
         "Login successful"
     ];
 
-    public function __construct(User $user = null, Db $db = null, Session $session)
+    public function __construct(Session $session, Db $db)
     {
-        $this->session = $session;
-        $this->db = $db;
-        $this->user = $user;
+        if ($this->session == null) {
+            $this->session = $session;
+        }
+        
+        if ($this->db == null) {
+            $this->db = $db;
+        }
+
     }
 
-    public function logIn()
+    public function logIn(User $user): void
     {
-        $this->db->prepare("SELECT * FROM users WHERE email = '{$this->user->getEmail()}'");
+        $this->user = $user;
 
-        if ($this->db->execute()) {
-            if ($this->db->getRowCount() === 0) {
-                $this->addMessage($this->textMessages[0]);
+        $existUser = $this->userExist('users', $this->user->getEmail());
+
+        if (!$existUser) {
+            $this->addMessage($this->textMessages[0]);
+        } else {
+            if ($this->verifyPassword($existUser['password'], $this->user->getPassword())) {
+                $this->addToSession($existUser);
+                $this->addMessage($this->textMessages[2]);
             } else {
-                $user = $this->db->getRecord();
-                if (password_verify($this->user->getPassword(), $user['password'])) {
-                    $userSession = ['id' => $user['id'], 'email' => $user['email'], 'login' => $user['login']];
-                    $this->session->setSession('loggedUser', $userSession);
-                    $this->addMessage($this->textMessages[2]);
-                } else {
-                    $this->addMessage($this->textMessages[1]);
-                }
+                $this->addMessage($this->textMessages[1]);
             }
         }
     }
 
-
-    public function logOut(): void
+    public function addToSession($existUser)
     {
-        $this->session->deleteSession('userId');
-        $this->session->destroySession();
+        $userSession = [
+            'id' => $existUser['id'],
+            'email' => $existUser['email'],
+            'login' => $existUser['login']
+        ];
+
+        $this->session->setSession('loggedUser', $userSession);
     }
 
-    public function isLogged()
+    public function verifyPassword(string $databasePassword, string $password): bool
     {
-        if ($this->session->issetSession('loggedUser')) {
+        return password_verify($password, $databasePassword) ? true : false;
+    }
+
+    public function userExist(string $table, string $email)
+    {
+        $this->db->prepare("SELECT * FROM $table WHERE email = '$email'");
+        $this->db->execute();
+
+        if ($this->db->getRowCount() === 0) {
+            return false;
+        } else {
+            return $existUser = $this->db->getRecord();
+        }
+    }
+
+    public static function logOut(Session $session): void
+    {
+        $session->deleteSession('userId');
+        $session->destroySession();
+    }
+
+    public static function isLogged(Session $session)
+    {
+        if ($session->issetSession('loggedUser')) {
             return $_SESSION['loggedUser'];
         } else {
             return false;
