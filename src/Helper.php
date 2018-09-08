@@ -44,7 +44,7 @@ class Helper
 
         switch ($type) {
             case 'categories':
-                $link .= "{$_SERVER['REQUEST_URI']}/entry/entry-view-bycategory.php?category=$id";
+                $link .= "{$_SERVER['REQUEST_URI']}category.php?category=$id";
                 break;
         }
 
