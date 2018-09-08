@@ -54,9 +54,14 @@ class Comment
         }
     }
 
-    public function getById(int $id)
+    public function getByIdEntry(int $id)
     {
-        $this->db->prepare("SELECT * FROM comments WHERE id = $id");
+        $this->db->prepare("
+          SELECT comments.*, users.login 
+          FROM comments 
+          LEFT JOIN users ON comments.id_user=users.id 
+          WHERE comments.id_entry = $id
+          ");
         if ($this->db->execute()) {
             return $this->db->getRecords();
         }
