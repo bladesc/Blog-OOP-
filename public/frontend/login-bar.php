@@ -20,18 +20,24 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-<?php if ($loggedUser): ?>
-    <div><?= $loggedUser['email'] ?></div>
-    <div><?= $loggedUser['login'] ?></div>
-    <div>
-        <form method="POST" action="">
-            <button type="submit" name="logout">Log out</button>
-        </form>
-    </div>
-<?php else: ?>
-    <div>
-        <form method="POST" action="">
-            <button type="submit" name="login">Log in</button>
-        </form>
-    </div>
-<?php endif; ?>
+<div id="box-login">
+    <?php if ($loggedUser): ?>
+        <div>
+            Your e-mial: <span><?= $loggedUser['email'] ?></span>
+        </div>
+        <div>
+            Your login: <span><?= $loggedUser['login'] ?></span>
+        </div>
+        <div>
+            <form method="POST" action="">
+                <button type="submit" name="logout">Log out</button>
+            </form>
+        </div>
+    <?php else: ?>
+        <div>
+            <form method="POST" action="">
+                <button type="submit" name="login">Log in</button>
+            </form>
+        </div>
+    <?php endif; ?>
+</div>
