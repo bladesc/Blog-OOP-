@@ -42,6 +42,14 @@ class Entry
 
     }
 
+    public function getByCategory(string $category)
+    {
+        $this->db->prepare("select * from entries where id_category = $category");
+        if ($this->db->execute()) {
+            return $this->db->getRecords();
+        }
+    }
+
     public function getById(int $id): array
     {
         $this->db->prepare("select * from entries where id = $id");
