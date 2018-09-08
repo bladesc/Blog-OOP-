@@ -25,7 +25,12 @@ class Category
 
     public function getAll($enable = true) {
         if ($enable) {
-            $this->db->prepare('select * from categories');
+            $this->db->prepare(
+                'SELECT categories.*,(
+                          SELECT count(*) FROM entries where categories.id = entries.id_category
+                          ) as entries
+                      FROM categories');
+
             if ($this->db->execute()) {
                 return $this->db->getRecords();
             }

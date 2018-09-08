@@ -15,7 +15,10 @@ $categories = $category->getAll(1);
     <h3>Menu</h3>
     <ul>
         <?php foreach ($categories as $category): ?>
-            <li><?= Helper::createLink($category['name'], $category['id'], "categories") ?></li>
+            <li>
+                <?= Helper::createLink($category['name'], $category['id'], "categories") ?>
+                <span><?= $category['entries'] ?></span>
+            </li>
         <?php endforeach; ?>
     </ul>
 </div>
