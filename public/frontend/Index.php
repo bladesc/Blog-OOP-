@@ -32,6 +32,7 @@ $categories = $category->getAll(1);
     <div><?= Helper::trimText($entry['description'], 300) ?></div>
     <div><?= Helper::changeDateFormat($entry['created_at']) ?></div>
     <div><?= Helper::changeDateFormat($entry['modified_at']) ?></div>
+    <div>Comments: <?= $entry['amount'] ?></div>
     <div>
         <form method="get" action="entry/entry-view.php">
             <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>

@@ -35,7 +35,11 @@ class Entry
 
     public function getAll()
     {
-        $this->db->prepare('select * from entries');
+        $this->db->prepare('
+          SELECT entries.*, 
+          (SELECT COUNT(*) FROM comments WHERE comments.id_entry = entries.id) as amount
+          FROM entries
+          ');
         if ($this->db->execute()) {
             return $this->db->getRecords();
         }
@@ -57,6 +61,7 @@ class Entry
             return $this->db->getRecord();
         }
     }
+
 
     public function create(Category $category)
     {
