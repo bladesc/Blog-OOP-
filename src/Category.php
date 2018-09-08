@@ -10,9 +10,25 @@ declare(strict_types=1);
 
 namespace Blog;
 
-
 class Category
 {
     private $id;
     private $name;
+    private $enabled;
+
+    private $db;
+
+    public function __construct(DB $db)
+    {
+        $this->db = $db;
+    }
+
+    public function getAll($enable = true) {
+        if ($enable) {
+            $this->db->prepare('select * from categories');
+            if ($this->db->execute()) {
+                return $this->db->getRecords();
+            }
+        }
+    }
 }

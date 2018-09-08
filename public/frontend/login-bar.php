@@ -21,7 +21,6 @@ if (isset($_POST['login'])) {
 ?>
 
 <?php if ($loggedUser): ?>
-    <div><?= $loggedUser['id'] ?></div>
     <div><?= $loggedUser['email'] ?></div>
     <div><?= $loggedUser['login'] ?></div>
     <div>

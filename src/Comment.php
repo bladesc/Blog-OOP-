@@ -37,12 +37,12 @@ class Comment
         $this->comment = $comment;
     }
 
-    public function addComment()
+    public function create()
     {
 
     }
 
-    public function getComments(int $idUser = null)
+    public function getAll(int $idUser = null)
     {
         $query = "SELECT * FROM comments";
         if ($idUser) {
@@ -54,7 +54,7 @@ class Comment
         }
     }
 
-    public function getComment(int $id)
+    public function getById(int $id)
     {
         $this->db->prepare("SELECT * FROM comments WHERE id = $id");
         if ($this->db->execute()) {
@@ -62,12 +62,12 @@ class Comment
         }
     }
 
-    public function deleteComment()
+    public function delete()
     {
 
     }
 
-    public function modifyComment()
+    public function update()
     {
 
     }
