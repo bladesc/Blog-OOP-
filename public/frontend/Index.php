@@ -23,7 +23,7 @@ $categories = $category->getAll(1);
 <?php include 'login-bar.php' ?>
 
 <?php foreach ($categories as $category): ?>
-    <div><?= $category['name'] ?></div>
+    <div><?= Helper::createLink($category['name'], "categories") ?></div>
 <?php endforeach; ?>
 
 <?php foreach ($entries as $entry): ?>

@@ -36,6 +36,19 @@ class Helper
         } else {
             return $date;
         }
+    }
 
+    public static function createLink(string $value, $type = null): string
+    {
+        $link = "<a href='";
+
+        switch ($type) {
+            case 'categories':
+                $link .= "{$_SERVER['REQUEST_URI']}/entry/entry-view-bycategory.php?category=$value";
+                break;
+        }
+
+        $link .= "'>{$value}</a>";
+        return $link;
     }
 }
