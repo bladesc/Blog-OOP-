@@ -37,7 +37,8 @@ class Entry
     {
         $this->db->prepare('
           SELECT entries.*, 
-          (SELECT COUNT(*) FROM comments WHERE comments.id_entry = entries.id) as amount
+          (SELECT COUNT(*) FROM comments WHERE comments.id_entry = entries.id) as amount,
+          (SELECT categories.name FROM categories WHERE categories.id = entries.id_category) as category
           FROM entries
           ');
         if ($this->db->execute()) {
