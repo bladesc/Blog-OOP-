@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend/entry/entry-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/entry/entry-view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entry-view.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="entry-view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/frontend/entry/entry-view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="438">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
                 <element signature="e#59#71#0#PHP" expanded="true" />
               </folding>
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="351">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -93,8 +91,8 @@
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="20" />
+            <state relative-caret-position="220">
+              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="e#56#68#0#PHP" expanded="true" />
               </folding>
@@ -114,8 +112,8 @@
       <file leaf-file-name="login-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/login-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="286">
+              <caret line="22" selection-start-line="22" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="e#6#23#0#PHP" expanded="true" />
               </folding>
@@ -173,8 +171,8 @@
         <option value="$PROJECT_DIR$/public/frontend/entry/category.php" />
         <option value="$PROJECT_DIR$/public/frontend/category.php" />
         <option value="$PROJECT_DIR$/src/Helper.php" />
-        <option value="$PROJECT_DIR$/public/frontend/entry/entry-view.php" />
         <option value="$PROJECT_DIR$/src/Comment.php" />
+        <option value="$PROJECT_DIR$/public/frontend/entry/entry-view.php" />
       </list>
     </option>
   </component>
@@ -317,12 +315,12 @@
       <workItem from="1536188717227" duration="10199000" />
       <workItem from="1536257719191" duration="30377000" />
       <workItem from="1536345797752" duration="19094000" />
-      <workItem from="1536439814172" duration="1866000" />
+      <workItem from="1536439814172" duration="2304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86633000" />
+    <option name="totallyTimeSpent" value="87071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
@@ -609,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/login-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#23#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -665,30 +653,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="220">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="e#56#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/entry/entry-view.php">
+    <entry file="file://$PROJECT_DIR$/public/frontend/login-bar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="286">
+          <caret line="22" selection-start-line="22" selection-end-line="30" selection-end-column="14" />
           <folding>
-            <element signature="e#59#71#0#PHP" expanded="true" />
+            <element signature="e#6#23#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comment.php">
+    <entry file="file://$PROJECT_DIR$/public/frontend/entry/entry-view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="438">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#59#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
