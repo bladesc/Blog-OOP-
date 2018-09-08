@@ -18,9 +18,9 @@ if ($session->issetSession('messages')) {
 //#ENTRIES#
 $db = new Db;
 $entry = new Entry($db);
-$entries = $entry->getEntries();
+$entries = $entry->getAll();
 
-$oneEntry = $entry->getEntry(2);
+$oneEntry = $entry->getById(2);
 
 //#CRUD#
 //delete
@@ -35,7 +35,7 @@ if (isset($_POST['delete'])) {
 
     $db = new Db;
     $entry = new Entry($db);
-    $entry->deleteEntry($id);
+    $entry->delete($id);
 
     if (!empty($entry->showMessage())) {
         $session = new Session;

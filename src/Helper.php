@@ -11,7 +11,7 @@ namespace Blog;
 class Helper
 {
     /**
-     * It return trim text to length passed in method
+     * It returns trim text to length passed in method
      *
      * @param string $text
      * @param int $characters
@@ -22,7 +22,14 @@ class Helper
         return substr($text, 0, $characters) . " ...";
     }
 
-    public static function dateOutput($date, $typeOutput = null)
+    /**
+     * it returns date with its changed format
+     *
+     * @param $date
+     * @param null $typeFormat
+     * @return false|string
+     */
+    public static function changeDateFormat($date, $typeFormat = null)
     {
         if (isset($date)) {
             return date_format(date_create($date), 'Y-m-d');

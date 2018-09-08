@@ -33,7 +33,7 @@ class Entry
         $this->db = $db;
     }
 
-    public function getEntries()
+    public function getAll()
     {
         $this->db->prepare('select * from entries');
         if ($this->db->execute()) {
@@ -42,7 +42,7 @@ class Entry
 
     }
 
-    public function getEntry(int $id): array
+    public function getById(int $id): array
     {
         $this->db->prepare("select * from entries where id = $id");
         if ($this->db->execute()) {
@@ -50,12 +50,12 @@ class Entry
         }
     }
 
-    public function createEntry(Category $category)
+    public function create(Category $category)
     {
 
     }
 
-    public function deleteEntry(int $id)
+    public function delete(int $id)
     {
         $this->db->prepare("DELETE FROM entries where id = $id");
         if ($this->db->execute()) {
@@ -65,7 +65,7 @@ class Entry
         }
     }
 
-    public function updateEntry(int $id)
+    public function update(int $id)
     {
     }
 
