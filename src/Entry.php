@@ -49,7 +49,17 @@ class Entry
 
     public function getByCategory(string $category)
     {
-        $this->db->prepare("select * from entries where id_category = $category");
+        $this->db->prepare("SELECT entries.*, (
+                                    SELECT categories.name 
+                                    FROM categories 
+                                    WHERE categories.id = $category) as category,
+                                    (
+                                    SELECT COUNT(*) 
+                                    FROM comments 
+                                    WHERE comments.id_entry = entries.id) as amount
+                                  FROM entries
+                                  where id_category = $category
+                                  ");
         if ($this->db->execute()) {
             return $this->db->getRecords();
         }

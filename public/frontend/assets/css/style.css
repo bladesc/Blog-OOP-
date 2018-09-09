@@ -40,7 +40,7 @@ header {
 
 button {
     padding: 4px 15px;
-    font-size: 10px;
+    font-size: 12px;
     border-radius: 2px;
     background: #ececec;
     border: 1px solid #bebebe;
@@ -62,13 +62,13 @@ button {
 h2 {
     font-weight: bold;
     color: #007edf;
-    font-size: 24px;
-    padding: 15px 0 5px 0;
+    font-size: 28px;
+    padding: 15px 0 7px 0;
     margin: 0;
 }
 
 .details {
-    font-size: 11px;
+    font-size: 12px;
     width: 100%;
     text-align: left;
 }
@@ -76,7 +76,7 @@ h2 {
 .details div {
     display: inline-block;
     margin-right: 10px;
-    padding: 2px 5px;
+    padding: 3px 10px;
     border-radius: 2px;
     background: #ececec;
 }
@@ -107,15 +107,14 @@ h2 {
 }
 
 #categories ul {
-    list-style-type: none;
+    list-style-type: square;
     margin: 0;
     padding: 0;
 }
 
 #categories ul li {
-    padding: 3px 0 3px 10px;
-    border-left: 2px solid #007edf;
-    margin: 4px 0;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 10px 0;
 }
 
 #categories ul li a {
@@ -132,7 +131,7 @@ h3 {
 }
 
 #categories ul li span {
-    font-size: 12px;
+    font-size: 13px;
     background: #dbebf7;
     border-radius: 15px;
     padding: 3px 6px;
@@ -150,7 +149,7 @@ footer {
 }
 
 #comments .comment {
-    font-size: 12px;
+    font-size: 14px;
     padding: 15px;
     background: #dbebf7;
     border-radius: 5px;
@@ -172,11 +171,16 @@ footer {
 
 textarea {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
     margin-bottom: 15px;
 }
 
-form {
+#comments form {
     margin-bottom: 20px;
+}
+
+#comments {
+    width: 100%;
+    clear: both;
 }

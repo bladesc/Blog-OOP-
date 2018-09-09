@@ -38,17 +38,7 @@ class Helper
         }
     }
 
-    public static function createLink(string $value, int $id, $type = null): string
+    public static function createLink()
     {
-        $link = "<a href='";
-
-        switch ($type) {
-            case 'categories':
-                $link .= "{$_SERVER['REQUEST_URI']}category.php?category=$id";
-                break;
-        }
-
-        $link .= "'>{$value}</a>";
-        return $link;
     }
 }

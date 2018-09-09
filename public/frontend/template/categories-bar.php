@@ -1,5 +1,4 @@
 <?php
-
 use Blog\Db;
 use Blog\Helper;
 use Blog\Category;
@@ -16,7 +15,7 @@ $categories = $category->getAll(1);
     <ul>
         <?php foreach ($categories as $category): ?>
             <li>
-                <?= Helper::createLink($category['name'], $category['id'], "categories") ?>
+                <a href="category.php?category=<?= $category['id'] ?>"><?= $category['name'] ?></a>
                 <span><?= $category['entries'] ?></span>
             </li>
         <?php endforeach; ?>

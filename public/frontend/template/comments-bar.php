@@ -1,5 +1,4 @@
 <?php
-
 use Blog\Db;
 use Blog\Comment;
 
