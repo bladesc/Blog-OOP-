@@ -76,17 +76,14 @@ class Login
 
         if ($this->userExist('users', $this->user->getEmail())) {
             $existUser = $this->getUser('users', $this->user->getEmail());
-
-            if (!$existUser) {
-                $this->addMessage($this->textMessages[0]);
+            if ($this->verifyPassword($existUser['password'], $this->user->getPassword())) {
+                $this->addToSession($existUser);
+                $this->addMessage($this->textMessages[2]);
             } else {
-                if ($this->verifyPassword($existUser['password'], $this->user->getPassword())) {
-                    $this->addToSession($existUser);
-                    $this->addMessage($this->textMessages[2]);
-                } else {
-                    $this->addMessage($this->textMessages[1]);
-                }
+                $this->addMessage($this->textMessages[1]);
             }
+        } else {
+            $this->addMessage($this->textMessages[0]);
         }
     }
 

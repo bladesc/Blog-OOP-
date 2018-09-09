@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
     if (!empty($login->showMessage())) {
         $session = new Session;
         //Redirect::redirectBack($login->showMessage(), $session);
-        Redirect::redirectTo('authorization.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('authorization.php', $login->showMessage(), $session);
     }
 }
 
