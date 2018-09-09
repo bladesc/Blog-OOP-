@@ -11,6 +11,7 @@ $entries  = $entry->getByCategory($category);
 ?>
 
 <div id="entries">
+    <h4>Category: <?= $entries[0]['category'] ?></h4>
     <?php foreach ($entries as $entry): ?>
         <div class="box-entry">
             <div class="details">

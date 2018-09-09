@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../../vendor/autoload.php';
+
 use Blog\Db;
 use Blog\Login;
 use Blog\Session;
@@ -7,24 +7,24 @@ use Blog\User;
 use Blog\Validate;
 use Blog\Redirect;
 
-
 //#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {
-    print_r($_SESSION['messages']);
+    $errors = $_SESSION['messages'];
     $session->deleteSession('messages');
 }
 
 //#########LOGIN
 if (isset($_POST['login'])) {
+
     $validate = new Validate;
     $email = $validate->validateEmail($_POST['email']);
     $password = $validate->validatePassword($_POST['password']);
 
     if (!empty($validate->showMessage())) {
-
         $session = new Session;
-        Redirect::redirectBack($validate->showMessage(), $session);
+        //Redirect::redirectBack($validate->showMessage(), $session);
+        Redirect::redirectTo('authorization.php', $validate->showMessage(), $session);
     }
 
     $user = new User;
@@ -38,7 +38,8 @@ if (isset($_POST['login'])) {
 
     if (!empty($login->showMessage())) {
         $session = new Session;
-        Redirect::redirectBack($login->showMessage(), $session);
+        //Redirect::redirectBack($login->showMessage(), $session);
+        Redirect::redirectTo('authorization.php', $validate->showMessage(), $session);
     }
 }
 
@@ -51,19 +52,33 @@ if (isset($_POST['logout'])) {
     }
 }
 
-//SESSION
-print_r($_SESSION);
 ?>
-
-<?php if (isset($_SESSION['loggedUser'])): ?>
-<form method="POST" action="">
-    <button type="submit" name="logout">Log out</button>
-</form>
-<?php else: ?>
-
-<form method="POST" action="">
-    <input type="email" name="email" placeholder="Your e-mail" required>
-    <input type="password" name="password" required>
-    <button type="submit" name="login">Log in</button>
-</form>
-<?php endif; ?>
+<div id="login">
+    <h3>Log in</h3>
+    <?php if (isset($_SESSION['loggedUser'])): ?>
+        <form method="POST" action="authorization.php">
+            <button type="submit" name="logout">Log out</button>
+        </form>
+    <?php else: ?>
+        <?php if (isset($errors)): ?>
+            <div class="errors">
+                <?php foreach ($errors as $error): ?>
+                    <p><?= $error ?></p>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+        <form method="POST" action="authorization.php">
+            <div>
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" placeholder="Your e-mail" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit" name="login">Log in</button>
+            </div>
+        </form>
+    <?php endif; ?>
+</div>
