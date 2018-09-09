@@ -214,6 +214,7 @@ input[type=email], input[type=text], input[type=password] {
     color: #d55a5a;
     border: 1px solid #f4cdcd;
     border-radius: 3px;
+    margin-bottom: 15px;
 }
 
 .errors p {

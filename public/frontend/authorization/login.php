@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
     if (!empty($validate->showMessage())) {
         $session = new Session;
         //Redirect::redirectBack($validate->showMessage(), $session);
-        Redirect::redirectTo('authorization.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/authorization.php', $validate->showMessage(), $session);
     }
 
     $user = new User;
@@ -36,12 +36,16 @@ if (isset($_POST['login'])) {
     $login = new Login($session);
     $login->logIn($user, $db);
 
+
     if (!empty($login->showMessage())) {
+        header('Location: index.php'); die;
         $session = new Session;
-        //Redirect::redirectBack($login->showMessage(), $session);
-        Redirect::redirectTo('authorization.php', $login->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/authorization.php', $login->showMessage(), $session);
+    } else {
+        Redirect::redirectTo('public/frontend/index.php');
     }
 }
+
 
 //#########LOGOUT
 if (isset($_POST['logout'])) {
