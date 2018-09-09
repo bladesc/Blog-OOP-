@@ -21,7 +21,7 @@ $entries  = $entry->getByCategory($category);
     <div><?= Helper::changeDateFormat($entry['created_at']) ?></div>
     <div><?= Helper::changeDateFormat($entry['modified_at']) ?></div>
     <div>
-        <form method="get" action="entry/entry-view.php">
+        <form method="get" action="entry-view.php">
             <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
             <button type="submit">More</button>
         </form>

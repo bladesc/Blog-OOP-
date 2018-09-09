@@ -1,5 +1,7 @@
         </div>
-        <footer>footer</footer>
+        <footer>
+            © 2018 Damian Szczęsny All Rights Reserved
+        </footer>
         </div>
 </body>
 </html>

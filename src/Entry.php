@@ -57,7 +57,12 @@ class Entry
 
     public function getById(int $id): array
     {
-        $this->db->prepare("select * from entries where id = $id");
+        $this->db->prepare("SELECT entries.*, (
+                                    SELECT categories.name 
+                                    FROM categories 
+                                    WHERE categories.id = entries.id_category) as category 
+                                  FROM entries 
+                                 WHERE id = $id");
         if ($this->db->execute()) {
             return $this->db->getRecord();
         }

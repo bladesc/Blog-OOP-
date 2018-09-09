@@ -1,7 +1,4 @@
 <?php
-
-require __DIR__ . '/../../../vendor/autoload.php';
-
 use Blog\Db;
 use Blog\Entry;
 use Blog\Helper;
@@ -23,13 +20,19 @@ $db = new Db;
 $comment = new Comment($db);
 $comments = $comment->getByIdEntry($id);
 ?>
-<?php include '../login-bar.php' ?>
 
-<div><?= $entry['id'] ?></div>
-<div><?= $entry['title'] ?></div>
-<div><?= $entry['description'] ?></div>
-<div><?= Helper::changeDateFormat($entry['created_at']) ?></div>
-<div><?= Helper::changeDateFormat($entry['modified_at']) ?></div>
+<div id="entries">
+        <div class="box-entry">
+            <div class="details">
+                <div>Created at: <span><?= Helper::changeDateFormat($entry['created_at']) ?></span></div>
+                <div>Category: <span><?= $entry['category'] ?></span></div>
+            </div>
+            <h2><?= $entry['title'] ?></h2>
+            <p><?= Helper::trimText($entry['description'], 300) ?></p>
+
+        </div>
+</div>
+
 
 <div>Comments <?= count($comments) ?></div>
 <?php foreach ($comments as $comment): ?>
@@ -47,4 +50,3 @@ $comments = $comment->getByIdEntry($id);
 <?php else: ?>
     <div>Comments are accessible only for logged users</div>
 <?php endif; ?>
-

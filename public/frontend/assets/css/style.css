@@ -101,6 +101,11 @@ h2 {
     border-bottom: 2px solid #e2e2e2;
 }
 
+.box-entry:last-child
+{
+    border-bottom: none !important;
+}
+
 #categories ul {
     list-style-type: none;
     margin: 0;
@@ -134,4 +139,12 @@ h3 {
     color: #3a9ead;
     display: inline-block;
     margin-left: 5px;
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 10px solid #e2e2e2;
 }
