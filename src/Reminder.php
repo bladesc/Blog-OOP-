@@ -9,12 +9,12 @@
 namespace Blog;
 
 
-class Remind
+class Reminder
 {
     private $db;
     private $user;
     private $session;
-    private $email;
+    private $mailer;
 
 
     private $errorMessages = [];
@@ -25,24 +25,32 @@ class Remind
      * @var array
      */
     private $textMessages = [
-        "E-mail doesn't exist"
+        "E-mail doesn't exist",
+        "Errors occurred during sending e-mail",
+        "E-mail was send successfully"
     ];
 
-    public function __construct(Db $db, User $user, Session $session, Email $email)
+    public function __construct(Db $db, User $user, Session $session, Mailer $mailer)
     {
         $this->db = $db;
         $this->session = $session;
         $this->user = $user;
-        $this->email = $email;
+        $this->mailer = $mailer;
     }
 
-    public function remind()
+    public function remind(): bool
     {
         if ($this->userExist('users', $this->user->getEmail())) {
             $hash = $this->generateHash();
             if ($this->insertHash($hash)) {
-                if(!$this->email->sendEmail($this->user->getEmail())) {
+                $link = $this->buildLink($hash);
+                if ($this->sendEmail($this->user->getEmail(), $link)) {
+                   //email was send successfully
+                    $this->addMessage($this->textMessages[2]);
+                    return true;
+                } else {
                     $this->addMessage($this->textMessages[1]);
+                    return false;
                 }
             }
         } else {
@@ -50,7 +58,21 @@ class Remind
         }
     }
 
-    public function insertHash(string $hash)
+    public function buildLink(string $hash): string
+    {
+        return $link = "http://localhost/Blog-OOP-/public/frontend/reminder.php?remind=$hash";
+    }
+
+    public function sendEmail(string $email, string $link): bool
+    {
+        $this->mailer->setSender('admin@blogoop.pl');
+        $this->mailer->setSubject('Change password');
+        $this->mailer->setRecipients([$email]);
+        $this->mailer->setMessage("Click link below to reset your password <br> <a href='$link'>Change password</a>");
+        return $this->mailer->sendEmail();
+    }
+
+    public function insertHash(string $hash): bool
     {
         $this->db->prepare("INSERT INTO users (`hash_string`) VALUES ($hash) WHERE `email` = $this->user->getEmail()");
         return ($this->db->execute());

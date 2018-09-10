@@ -4,7 +4,8 @@ use Blog\Validate;
 use Blog\Db;
 use Blog\Redirect;
 use Blog\Session;
-use Blog\Remind;
+use Blog\Reminder;
+use Blog\Mailer;
 
 //#########SESSION MESSAGES
 $session = new Session;
@@ -26,9 +27,11 @@ if (isset($_POST['send'])) {
     $user = new User;
     $user->setEmail($email);
 
+    $mailer = new Mailer;
+
     $db = new Db;
     $session = new Session;
-    $remind = new Remind($db, $user, $session);
+    $remind = new Reminder($db, $user, $session, $mailer);
     $remind->remind();
 }
 
