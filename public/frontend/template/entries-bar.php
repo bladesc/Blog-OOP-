@@ -17,7 +17,7 @@ $entries = $entry->getAll();
                 <div>Category: <span><?= $entry['category'] ?></span></div>
                 <div>Comments: <span><?= $entry['amount'] ?></span></div>
             </div>
-            <h2><?= $entry['title'] ?></h2>
+            <h2><a href="entry-view.php?id=<?= $entry['id'] ?>"><?= $entry['title'] ?></a></h2>
             <p><?= Helper::trimText($entry['description'], 300) ?></p>
 
             <div>
