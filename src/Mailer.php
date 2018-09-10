@@ -11,51 +11,115 @@ namespace Blog;
 
 class Mailer
 {
-    private $sender;
+    /**
+     * Email sender
+     *
+     * @var string
+     */
+    private $sender = 'admin@bloogoop.pl';
+    /**
+     * Email recipients
+     *
+     * @var
+     */
     private $recipients;
+    /**
+     * Email message
+     *
+     * @var
+     */
     private $message;
+    /**
+     * Email subject
+     *
+     * @var
+     */
     private $subject;
 
-    public function setSender($sender)
+    /**
+     * It sets email sender
+     * @param string $sender
+     */
+    public function setSender(string $sender): void
     {
         $this->sender = $sender;
     }
 
-    public function setSubject($subject)
+    /**
+     * It sets email subject
+     *
+     * @param string $subject
+     */
+    public function setSubject(string $subject): void
     {
         $this->subject = $subject;
     }
 
-    public function setRecipients($recipients)
+    /**
+     * It sets email recipients
+     *
+     * @param array $recipients
+     */
+    public function setRecipients(array $recipients): void
     {
         $this->recipients = $recipients;
     }
 
-    public function setMessage($message)
+    /**
+     * It sets email message
+     *
+     * @param string $message
+     */
+    public function setMessage(string $message): void
     {
         $this->message = $message;
     }
 
-    public function getSender()
+    /**
+     * It returns email sender
+     *
+     * @return string
+     */
+    public function getSender(): string
     {
         return $this->sender;
     }
 
-    public function getSubject()
+    /**
+     * It returns email subject
+     *
+     * @return string
+     */
+    public function getSubject(): string
     {
         return $this->subject;
     }
 
-    public function getRecipient()
+    /**
+     * It returns email recipients
+     *
+     * @return array
+     */
+    public function getRecipient(): array
     {
         return $this->recipients[0];
     }
 
-    public function getMessage()
+    /**
+     * It returns email message
+     *
+     * @return string
+     */
+    public function getMessage(): string
     {
         return $this->message;
     }
 
+    /**
+     * It sends email
+     *
+     * @return bool
+     */
     public function sendEmail()
     {
         $to = $this->getRecipient();
@@ -66,6 +130,11 @@ class Mailer
         return mail($to, $subject, $message, $headers);
     }
 
+    /**
+     * It returns headers for e-mail
+     *
+     * @return string
+     */
     public function getHeaders()
     {
         // To send HTML mail, the Content-type header must be set

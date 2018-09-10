@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Reminder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reminder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mailer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,20 +59,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reminder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Reminder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reminder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+            <state relative-caret-position="616">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Mailer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="550">
-              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+              <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+              <folding>
+                <element signature="e#125#184#0#PHP" />
+                <element signature="e#232#288#0#PHP" />
+                <element signature="e#318#363#0#PHP" />
+                <element signature="e#390#435#0#PHP" />
+                <element signature="e#442#510#0#PHP" />
+                <element signature="e#381#459#0#PHP" />
+                <element signature="e#484#568#0#PHP" />
+                <element signature="e#599#677#0#PHP" />
+                <element signature="e#699#771#0#PHP" />
+                <element signature="e#740#813#0#PHP" />
+                <element signature="e#903#978#0#PHP" />
+                <element signature="e#854#926#0#PHP" />
+                <element signature="e#931#992#0#PHP" />
+                <element signature="e#1220#1298#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,8 +205,8 @@
         <option value="$PROJECT_DIR$/src/Remind.php" />
         <option value="$PROJECT_DIR$/src/Email.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" />
-        <option value="$PROJECT_DIR$/src/Mailer.php" />
         <option value="$PROJECT_DIR$/src/Reminder.php" />
+        <option value="$PROJECT_DIR$/src/Mailer.php" />
       </list>
     </option>
   </component>
@@ -237,7 +253,7 @@
       <path value="$PROJECT_DIR$/vendor/components/jquery" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="67" />
     <option name="y" value="82" />
     <option name="width" value="1095" />
@@ -360,12 +376,12 @@
       <workItem from="1536345797752" duration="19094000" />
       <workItem from="1536439814172" duration="18092000" />
       <workItem from="1536523071263" duration="10927000" />
-      <workItem from="1536608762788" duration="7664000" />
+      <workItem from="1536608762788" duration="8045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121450000" />
+    <option name="totallyTimeSpent" value="121831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="934" extended-state="6" />
@@ -726,17 +742,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mailer.php">
+    <entry file="file://$PROJECT_DIR$/src/Reminder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        <state relative-caret-position="616">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reminder.php">
+    <entry file="file://$PROJECT_DIR$/src/Mailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        <state relative-caret-position="550">
+          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <element signature="e#125#184#0#PHP" />
+            <element signature="e#232#288#0#PHP" />
+            <element signature="e#318#363#0#PHP" />
+            <element signature="e#390#435#0#PHP" />
+            <element signature="e#442#510#0#PHP" />
+            <element signature="e#381#459#0#PHP" />
+            <element signature="e#484#568#0#PHP" />
+            <element signature="e#599#677#0#PHP" />
+            <element signature="e#699#771#0#PHP" />
+            <element signature="e#740#813#0#PHP" />
+            <element signature="e#903#978#0#PHP" />
+            <element signature="e#854#926#0#PHP" />
+            <element signature="e#931#992#0#PHP" />
+            <element signature="e#1220#1298#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
