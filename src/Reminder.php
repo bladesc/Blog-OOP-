@@ -11,9 +11,29 @@ namespace Blog;
 
 class Reminder
 {
+    /**
+     * Db object
+     *
+     * @var Db
+     */
     private $db;
+    /**
+     * User object
+     *
+     * @var User
+     */
     private $user;
+    /**
+     * Sessio nobject
+     *
+     * @var Session
+     */
     private $session;
+    /**
+     * Mailer object
+     *
+     * @var Mailer \
+     */
     private $mailer;
 
 
@@ -30,6 +50,14 @@ class Reminder
         "E-mail was send successfully"
     ];
 
+    /**
+     * Reminder constructor.
+     *
+     * @param Db $db
+     * @param User $user
+     * @param Session $session
+     * @param Mailer $mailer
+     */
     public function __construct(Db $db, User $user, Session $session, Mailer $mailer)
     {
         $this->db = $db;
@@ -38,11 +66,16 @@ class Reminder
         $this->mailer = $mailer;
     }
 
+    /**
+     * It add hash string to database and sends email with link
+     *
+     * @return bool
+     */
     public function remind(): bool
     {
         if ($this->userExist('users', $this->user->getEmail())) {
             $hash = $this->generateHash();
-            if ($this->insertHash($hash)) {
+            if ($this->updateHash($hash)) {
                 $link = $this->buildLink($hash);
                 if ($this->sendEmail($this->user->getEmail(), $link)) {
                    //email was send successfully
@@ -58,11 +91,24 @@ class Reminder
         }
     }
 
+    /**
+     * It builds link for reminding e-mail
+     *
+     * @param string $hash
+     * @return string
+     */
     public function buildLink(string $hash): string
     {
         return $link = "http://localhost/Blog-OOP-/public/frontend/reminder.php?remind=$hash";
     }
 
+    /**
+     * It prepare and sends email
+     *
+     * @param string $email
+     * @param string $link
+     * @return bool
+     */
     public function sendEmail(string $email, string $link): bool
     {
         $this->mailer->setSender('admin@blogoop.pl');
@@ -72,13 +118,26 @@ class Reminder
         return $this->mailer->sendEmail();
     }
 
-    public function insertHash(string $hash): bool
+
+    /**
+     * It updates hash string in database
+     *
+     * @param string $hash
+     * @return bool
+     */
+    public function updateHash(string $hash): bool
     {
         $email = $this->user->getEmail();
-        $this->db->prepare("UPDATE users SET remind_string = '$hash' WHERE email = '$email'");
+        $updated_at = date("Y-m-d H:i:s");
+        $this->db->prepare("UPDATE users SET remind_string = '$hash', updated_at = '$updated_at' WHERE email = '$email'");
         return ($this->db->execute());
     }
 
+    /**
+     * It generates unique hash string
+     *
+     * @return string
+     */
     public function generateHash(): string
     {
         return md5(uniqid(rand(), true));;
