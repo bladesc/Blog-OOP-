@@ -4,6 +4,7 @@ use Blog\Validate;
 use Blog\Db;
 use Blog\Redirect;
 use Blog\Session;
+use Blog\Remind;
 
 //#########SESSION MESSAGES
 $session = new Session;
@@ -27,13 +28,13 @@ if (isset($_POST['send'])) {
 
     $db = new Db;
     $session = new Session;
-    $remind = new Remind($user, $db, $session);
+    $remind = new Remind($db, $user, $session);
     $remind->remind();
 }
 
 ?>
 
 <form action="" method="post">
-    <input type="email" placeholder="e-mail" id="email">
+    <input type="email" name="email" placeholder="e-mail" id="email" required>
     <button type="submit" name="send">Send me remind</button>
 </form>
