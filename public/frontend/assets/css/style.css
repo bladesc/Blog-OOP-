@@ -221,3 +221,23 @@ div#login {
     margin: 0;
     padding: 0;
 }
+
+form a {
+    color: #585858;
+}
+
+.login-button {
+    width: 40%;
+    text-align: center;
+    margin: 15px auto 0 auto;
+    background: #62d562;
+}
+
+.login-button a {
+    color: #fff;
+    font-size: 21px;
+    padding: 20px;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: block;
+}

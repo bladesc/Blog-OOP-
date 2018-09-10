@@ -81,6 +81,11 @@ if (isset($_POST['logout'])) {
             <div>
                 <button type="submit" name="login">Log in</button>
             </div>
+            <div>
+                <a href="remind.php">Forgot password?</a>
+            </div>
         </form>
     <?php endif; ?>
 </div>
+
+<div class="login-button"><a href="register.php">Register</a></div>
