@@ -10,7 +10,7 @@ use Blog\Redirect;
 //#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {
-    $errors = $_SESSION['messages'];
+    $errorsLogin = $_SESSION['messages'];
     $session->deleteSession('messages');
 }
 
@@ -23,8 +23,7 @@ if (isset($_POST['login'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        //Redirect::redirectBack($validate->showMessage(), $session);
-        Redirect::redirectTo('public/frontend/authorization.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/login.php', $validate->showMessage(), $session);
     }
 
     $user = new User;
@@ -38,9 +37,8 @@ if (isset($_POST['login'])) {
 
 
     if (!empty($login->showMessage())) {
-        header('Location: index.php'); die;
         $session = new Session;
-        Redirect::redirectTo('public/frontend/authorization.php', $login->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/login.php', $login->showMessage(), $session);
     } else {
         Redirect::redirectTo('public/frontend/index.php');
     }
@@ -60,18 +58,18 @@ if (isset($_POST['logout'])) {
 <div id="login">
     <h3>Log in</h3>
     <?php if (isset($_SESSION['loggedUser'])): ?>
-        <form method="POST" action="authorization.php">
+        <form method="POST" action="" autocomplete="on">
             <button type="submit" name="logout">Log out</button>
         </form>
     <?php else: ?>
-        <?php if (isset($errors)): ?>
+        <?php if (isset($errorsLogin)): ?>
             <div class="errors">
-                <?php foreach ($errors as $error): ?>
-                    <p><?= $error ?></p>
+                <?php foreach ($errorsLogin as $errorLogin): ?>
+                    <p><?= $errorLogin ?></p>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-        <form method="POST" action="authorization.php">
+        <form method="POST" action="">
             <div>
                 <label for="email">E-mail</label>
                 <input id="email" type="email" name="email" placeholder="Your e-mail" required>

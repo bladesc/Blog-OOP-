@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/../../../vendor/autoload.php';
 
 use Blog\Db;
 use Blog\Register;
@@ -12,7 +11,7 @@ use Blog\Redirect;
 //#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {
-    print_r($_SESSION['messages']);
+    $errors = $_SESSION['messages'];
     $session->deleteSession('messages');
 }
 
@@ -23,9 +22,8 @@ if (isset($_POST['register'])) {
     $password = $validate->validatePassword($_POST['password']);
 
     if (!empty($validate->showMessage())) {
-        $redirect = new Redirect;
         $session = new Session;
-        $redirect->redirectBack($validate->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/register.php', $validate->showMessage(), $session);
     }
 
     $user = new User;
@@ -40,17 +38,38 @@ if (isset($_POST['register'])) {
 
     if (!empty($register->showMessage())) {
         $session = new Session;
-        Redirect::redirectBack($register->showMessage(), $session);
+        Redirect::redirectTo('public/frontend/register.php', $register->showMessage(), $session);
+    } else {
+        Redirect::redirectTo('public/frontend/index.php');
     }
+    print_r($_SESSION);
 }
 
 
 ?>
 
-
-<form method="post" action="">
-    <input type="text" name="login" required placeholder="login">
-    <input type="email" name="email" required placeholder="E-mail">
-    <input type="password" name="password" required>
-    <button type="submit" name="register">Register</button>
-</form>
+<div id="login">
+    <h3>Register</h3>
+    <?php if (isset($errors)): ?>
+        <div class="errors">
+            <?php foreach ($errors as $error): ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <form method="post" action="">
+        <div>
+            <label for="login">Login</label>
+            <input id="login" type="text" name="login" required placeholder="login">
+        </div>
+        <div>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" required placeholder="E-mail">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required>
+        </div>
+        <button type="submit" name="register">Register</button>
+    </form>
+</div>

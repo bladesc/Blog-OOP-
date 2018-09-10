@@ -45,7 +45,7 @@ class Register
      */
     private $textMessages = [
         "E-mail exist in base",
-        "Register successful"
+        "Register error"
     ];
 
     /**
@@ -70,7 +70,7 @@ class Register
         if (!$this->userExist('users', $this->user->getEmail())) {
             $password = $this->generatePassword($this->user->getPassword());
 
-            if ($this->insertUser($password)) {
+            if (!$this->insertUser($password)) {
                 $this->addMessage($this->textMessages[1]);
             }
         } else {
@@ -84,7 +84,8 @@ class Register
      * @param string $password
      * @return mixed
      */
-    public function insertUser(string $password): bool
+    public
+    function insertUser(string $password): bool
     {
         $this->db->prepare(
             "INSERT INTO users (
@@ -106,7 +107,8 @@ class Register
      * @param string $email
      * @return bool
      */
-    public function userExist(string $table, string $email): bool
+    public
+    function userExist(string $table, string $email): bool
     {
         $this->db->prepare("SELECT * FROM $table WHERE email = '$email'");
         $this->db->execute();
@@ -120,7 +122,8 @@ class Register
      * @param string $password
      * @return bool|string
      */
-    public function generatePassword(string $password)
+    public
+    function generatePassword(string $password)
     {
         return password_hash($password, PASSWORD_BCRYPT);
     }
@@ -130,7 +133,8 @@ class Register
      *
      * @param string $message
      */
-    public function addMessage(string $message): void
+    public
+    function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
@@ -140,7 +144,8 @@ class Register
      *
      * @return array
      */
-    public function showMessage(): array
+    public
+    function showMessage(): array
     {
         return $this->errorMessages;
     }

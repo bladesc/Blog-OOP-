@@ -42,5 +42,6 @@ class Redirect
         }
 
         header("Location: http://$path ");
+        die;
     }
 }

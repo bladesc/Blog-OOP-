@@ -197,7 +197,7 @@ input[type=email], input[type=text], input[type=password] {
     width: 100%;
 }
 
-#login {
+div#login {
     color: #585858;
     border: 10px solid #e2e2e2;
     padding: 30px;
