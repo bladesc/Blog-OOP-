@@ -74,7 +74,8 @@ class Reminder
 
     public function insertHash(string $hash): bool
     {
-        $this->db->prepare("INSERT INTO users (`hash_string`) VALUES ($hash) WHERE `email` = $this->user->getEmail()");
+        $email = $this->user->getEmail();
+        $this->db->prepare("UPDATE users SET remind_string = '$hash' WHERE email = '$email'");
         return ($this->db->execute());
     }
 
