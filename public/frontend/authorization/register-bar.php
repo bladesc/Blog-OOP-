@@ -57,6 +57,8 @@ if (isset($_POST['register'])) {
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+
+
     <form method="post" action="">
         <div>
             <label for="login">Login</label>

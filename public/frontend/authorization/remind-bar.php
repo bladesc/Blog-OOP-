@@ -1,4 +1,5 @@
 <?php
+
 use Blog\User;
 use Blog\Validate;
 use Blog\Db;
@@ -36,8 +37,25 @@ if (isset($_POST['send'])) {
 }
 
 ?>
+<div id="login">
+    <h3>Remind password</h3>
 
-<form action="" method="post">
-    <input type="email" name="email" placeholder="e-mail" id="email" required>
-    <button type="submit" name="send">Send me remind</button>
-</form>
+    <?php if (isset($errors)): ?>
+        <div class="errors">
+            <?php foreach ($errors as $error): ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <form action="" method="post">
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="e-mail" id="email" required>
+        </div>
+            <button type="submit" name="send">Send me remind</button>
+    </form>
+</div>
+
+<div class="login-button"><a href="login.php">Log in</a></div>
+<div class="login-button"><a href="register.php">Register</a></div>
