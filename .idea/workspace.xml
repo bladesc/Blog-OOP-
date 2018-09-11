@@ -6,12 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/reminder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reminder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reminder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validate.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,6 +28,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="7" lean-forward="true" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login-bar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1122">
+              <caret line="9" selection-start-line="9" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#7#19#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -55,10 +74,10 @@
       <file leaf-file-name="reminder-bar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="4" selection-start-line="39" selection-end-line="39" selection-end-column="28" />
+            <state relative-caret-position="286">
+              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding>
-                <element signature="e#55#73#0#PHP" expanded="true" />
+                <element signature="e#7#25#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,17 +86,8 @@
       <file leaf-file-name="Validate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Validate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="php.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../php/php.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="1056" lean-forward="true" selection-start-line="1056" selection-end-line="1056" />
+            <state relative-caret-position="245">
+              <caret line="90" column="37" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -91,22 +101,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendmail.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../sendmail/sendmail.ini">
+      <file leaf-file-name="entry-bar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/frontend/template/entry-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Mailer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="616">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <element signature="e#826#908#0#PHP" />
+                <element signature="e#6#18#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,7 +181,6 @@
         <option value="$PROJECT_DIR$/public/frontend/register.php" />
         <option value="$PROJECT_DIR$/src/Redirect.php" />
         <option value="$PROJECT_DIR$/src/Register.php" />
-        <option value="$PROJECT_DIR$/src/Validate.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/login.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/register.php" />
         <option value="$PROJECT_DIR$/public/frontend/template/entries-bar.php" />
@@ -198,6 +198,7 @@
         <option value="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" />
         <option value="$PROJECT_DIR$/src/Reminder.php" />
         <option value="$PROJECT_DIR$/public/frontend/reminder.php" />
+        <option value="$PROJECT_DIR$/src/Validate.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php" />
       </list>
     </option>
@@ -302,6 +303,13 @@
             <path>
               <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -361,12 +369,12 @@
       <workItem from="1536345797752" duration="19094000" />
       <workItem from="1536439814172" duration="18092000" />
       <workItem from="1536523071263" duration="10927000" />
-      <workItem from="1536608762788" duration="14422000" />
+      <workItem from="1536608762788" duration="16273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128208000" />
+    <option name="totallyTimeSpent" value="130059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="934" extended-state="6" />
@@ -575,27 +583,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/template/entry-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#6#18#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/template/entries-bar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -649,16 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="e#7#19#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
@@ -707,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -742,12 +716,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1122">
+          <caret line="9" selection-start-line="9" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#7#19#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/template/entry-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#6#18#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/reminder-bar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="4" selection-start-line="39" selection-end-line="39" selection-end-column="28" />
+        <state relative-caret-position="286">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#55#73#0#PHP" expanded="true" />
+            <element signature="e#7#25#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -28,7 +28,8 @@ class Validate
         "Incorrect e-mail",
         "Incorrect password",
         "Incorrect login",
-        "Incorrect id"
+        "Incorrect id",
+        "Passwords are not the same"
     ];
 
     /**
@@ -83,6 +84,19 @@ class Validate
             return $value;
         } else {
             $this->addMessage($this->textMessages[1]);
+            return false;
+        }
+    }
+
+    public function validatePasswords(string $password, string $passwordProve): bool
+    {
+        $password = $this->validatePassword($password);
+        $passwordProve = $this->validatePassword($passwordProve);
+
+        if ($password === $passwordProve) {
+            return true;
+        } else {
+            $this->addMessage($this->textMessages[4]);
             return false;
         }
     }
