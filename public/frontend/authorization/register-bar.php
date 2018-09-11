@@ -19,7 +19,7 @@ if (isset($_POST['register'])) {
     $validate = new Validate;
     $login = $validate->validateLogin($_POST['login']);
     $email = $validate->validateEmail($_POST['email']);
-    $password = $validate->validatePassword($_POST['password']);
+    $password = $validate->validatePasswords($_POST['password'], $_POST['passwordProve']);
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
@@ -71,6 +71,10 @@ if (isset($_POST['register'])) {
         <div>
             <label for="password">Password</label>
             <input id="password" type="password" name="password" required>
+        </div>
+        <div>
+            <label for="passwordProve">Prove of password: </label>
+            <input type="password" name="passwordProve" id="passwordProve" value="">
         </div>
         <button type="submit" name="register">Register</button>
     </form>

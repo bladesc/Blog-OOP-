@@ -42,7 +42,7 @@ class Validate
     {
         $value = $this->validateValue($value);
 
-        $pattern = '/^([a-zA-Z]|-|_|\.)+@[a-zA-Z]+\.[a-zA-Z]+$/';
+        $pattern = '/^([a-zA-Z]|[0-9]|-|_|\.)+@[a-zA-Z]+\.[a-zA-Z]+$/';
         if (preg_match($pattern, $value)) {
             return $value;
         } else {
