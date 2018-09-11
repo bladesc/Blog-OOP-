@@ -240,8 +240,9 @@ form a {
 .login-button a {
     color: #fff;
     font-size: 21px;
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
     box-sizing: border-box;
     display: block;
+    border: 1px solid #3aa02c;
 }

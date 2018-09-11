@@ -71,7 +71,7 @@ class Reminder
      *
      * @return bool
      */
-    public function remind(): bool
+    public function remind()
     {
         if ($this->userExist('users', $this->user->getEmail())) {
             $hash = $this->generateHash();
@@ -80,10 +80,8 @@ class Reminder
                 if ($this->sendEmail($this->user->getEmail(), $link)) {
                    //email was send successfully
                     $this->addMessage($this->textMessages[2]);
-                    return true;
                 } else {
                     $this->addMessage($this->textMessages[1]);
-                    return false;
                 }
             }
         } else {

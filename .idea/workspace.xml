@@ -6,8 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68d05a35-1e0a-453e-ad66-9b6cda8052ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/frontend/authorization/register-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/register-bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mailer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Reminder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reminder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,20 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/frontend/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="487">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="e#7#19#0#PHP" expanded="true" />
               </folding>
@@ -51,77 +45,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2684">
-              <caret line="179" column="28" lean-forward="true" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Reminder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reminder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="198">
+              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="246" column="30" selection-start-line="246" selection-start-column="30" selection-end-line="246" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="php.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../php/php.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="784">
+              <caret line="1056" lean-forward="true" selection-start-line="1056" selection-end-line="1056" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendmail.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../sendmail/sendmail.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Mailer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+            <state relative-caret-position="176">
+              <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
               <folding>
-                <element signature="e#125#184#0#PHP" />
-                <element signature="e#232#288#0#PHP" />
-                <element signature="e#318#363#0#PHP" />
-                <element signature="e#390#435#0#PHP" />
-                <element signature="e#442#510#0#PHP" />
-                <element signature="e#381#459#0#PHP" />
                 <element signature="e#826#908#0#PHP" />
-                <element signature="e#599#677#0#PHP" />
-                <element signature="e#699#771#0#PHP" />
-                <element signature="e#740#813#0#PHP" />
-                <element signature="e#903#978#0#PHP" />
-                <element signature="e#854#926#0#PHP" />
-                <element signature="e#931#992#0#PHP" />
-                <element signature="e#1220#1298#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Redirect.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Redirect.php">
+      <file leaf-file-name="email_test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../email_test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="e#6#86#0#PHP" />
-                <element signature="e#151#289#0#PHP" />
-                <element signature="e#533#699#0#PHP" />
-              </folding>
+            <state relative-caret-position="44">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Db.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-352">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remind-bar.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="remind-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/authorization/remind-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="267">
+              <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding>
                 <element signature="e#6#20#0#PHP" expanded="true" />
               </folding>
@@ -151,6 +136,8 @@
     <findStrings>
       <find>getRecords</find>
       <find>Entries</find>
+      <find>smy</find>
+      <find>for Uni</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,9 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Session.php" />
-        <option value="$PROJECT_DIR$/public/Index.php" />
-        <option value="$PROJECT_DIR$/public/backend/index.php" />
         <option value="$PROJECT_DIR$/public/frontend/entry/entry-view-bycategory.php" />
         <option value="$PROJECT_DIR$/public/frontend/entry/category.php" />
         <option value="$PROJECT_DIR$/src/Comment.php" />
@@ -200,16 +184,19 @@
         <option value="$PROJECT_DIR$/public/frontend/authorization/login.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/register.php" />
         <option value="$PROJECT_DIR$/public/frontend/template/entries-bar.php" />
-        <option value="$PROJECT_DIR$/public/frontend/assets/css/style.css" />
         <option value="$PROJECT_DIR$/public/frontend/template/login-bar.php" />
         <option value="$PROJECT_DIR$/public/frontend/remind.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/login-bar.php" />
         <option value="$PROJECT_DIR$/src/Remind.php" />
         <option value="$PROJECT_DIR$/src/Email.php" />
-        <option value="$PROJECT_DIR$/src/Reminder.php" />
-        <option value="$PROJECT_DIR$/src/Mailer.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/register-bar.php" />
+        <option value="$PROJECT_DIR$/src/Reminder.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/remind-bar.php" />
+        <option value="$PROJECT_DIR$/public/frontend/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/../email_test.php" />
+        <option value="$PROJECT_DIR$/../../php/php.ini" />
+        <option value="$PROJECT_DIR$/../../sendmail/sendmail.ini" />
+        <option value="$PROJECT_DIR$/src/Mailer.php" />
       </list>
     </option>
   </component>
@@ -372,12 +359,12 @@
       <workItem from="1536345797752" duration="19094000" />
       <workItem from="1536439814172" duration="18092000" />
       <workItem from="1536523071263" duration="10927000" />
-      <workItem from="1536608762788" duration="8245000" />
+      <workItem from="1536608762788" duration="11229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122031000" />
+    <option name="totallyTimeSpent" value="125015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="934" extended-state="6" />
@@ -437,24 +424,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../zadanie03092018/junior/info.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="21">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../zadanie03092018v2/src/Runners.php" />
-    <entry file="file://$PROJECT_DIR$/../zadanie03092018/junior/runners.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../zadanie03092018v2/src/Route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -642,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -669,16 +631,6 @@
           <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding>
             <element signature="e#6#23#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="e#7#19#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -704,36 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reminder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
-          <folding>
-            <element signature="e#125#184#0#PHP" />
-            <element signature="e#232#288#0#PHP" />
-            <element signature="e#318#363#0#PHP" />
-            <element signature="e#390#435#0#PHP" />
-            <element signature="e#442#510#0#PHP" />
-            <element signature="e#381#459#0#PHP" />
-            <element signature="e#826#908#0#PHP" />
-            <element signature="e#599#677#0#PHP" />
-            <element signature="e#699#771#0#PHP" />
-            <element signature="e#740#813#0#PHP" />
-            <element signature="e#903#978#0#PHP" />
-            <element signature="e#854#926#0#PHP" />
-            <element signature="e#931#992#0#PHP" />
-            <element signature="e#1220#1298#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Redirect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -746,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/remind.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/register-bar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="641">
@@ -760,12 +675,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reminder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/authorization/login-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="e#7#19#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/remind.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="246" column="30" selection-start-line="246" selection-start-column="30" selection-end-line="246" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/authorization/remind-bar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="267">
+          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
           <folding>
             <element signature="e#6#20#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../email_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../php/php.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="1056" lean-forward="true" selection-start-line="1056" selection-end-line="1056" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../sendmail/sendmail.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+          <folding>
+            <element signature="e#826#908#0#PHP" />
           </folding>
         </state>
       </provider>

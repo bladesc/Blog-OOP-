@@ -34,6 +34,13 @@ if (isset($_POST['send'])) {
     $session = new Session;
     $remind = new Reminder($db, $user, $session, $mailer);
     $remind->remind();
+
+    if (!empty($remind->showMessage())) {
+        $session = new Session;
+        Redirect::redirectTo('public/frontend/remind.php', $remind->showMessage(), $session);
+    } else {
+        Redirect::redirectTo('public/frontend/index.php');
+    }
 }
 
 ?>

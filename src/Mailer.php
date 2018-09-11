@@ -100,7 +100,7 @@ class Mailer
      *
      * @return array
      */
-    public function getRecipient(): array
+    public function getRecipient(): string
     {
         return $this->recipients[0];
     }
