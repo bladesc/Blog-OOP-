@@ -2,11 +2,16 @@
 use Blog\Db;
 use Blog\Entry;
 use Blog\Helper;
+use Blog\Paginator;
 
 //#ENTRIES#
 $db = new Db;
 $entry = new Entry($db);
 $entries = $entry->getAll();
+
+$paginator = new Paginator($entries, 2);
+$entries = $paginator->getPaginateEntries($_GET['id']);
+$navigation = $paginator->getNavigation();
 ?>
 
 <div id="entries">
@@ -28,4 +33,8 @@ $entries = $entry->getAll();
             </div>
         </div>
     <?php endforeach; ?>
+
+    <?php if ($navigation): ?>
+        <?= $navigation?>
+    <?php endif; ?>
 </div>
