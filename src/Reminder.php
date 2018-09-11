@@ -54,32 +54,33 @@ class Reminder
      * Reminder constructor.
      *
      * @param Db $db
-     * @param User $user
-     * @param Session $session
-     * @param Mailer $mailer
      */
-    public function __construct(Db $db, User $user, Session $session, Mailer $mailer)
+    public function __construct(Db $db)
     {
         $this->db = $db;
-        $this->session = $session;
-        $this->user = $user;
-        $this->mailer = $mailer;
+
     }
 
     /**
      * It add hash string to database and sends email with link
      *
-     * @return bool
+     * @param User $user
+     * @param Session $session
+     * @param Mailer $mailer
      */
-    public function remind()
+    public function sendRemind(User $user, Session $session, Mailer $mailer)
     {
+        $this->session = $session;
+        $this->user = $user;
+        $this->mailer = $mailer;
+
         if ($this->userExist('users', $this->user->getEmail())) {
             $hash = $this->generateHash();
             if ($this->updateHash($hash)) {
-                $link = $this->buildLink($hash);
+                $link = $this->buildLink($hash, $this->user->getEmail());
                 if ($this->sendEmail($this->user->getEmail(), $link)) {
                    //email was send successfully
-                    $this->addMessage($this->textMessages[2]);
+                    //$this->addMessage($this->textMessages[2]);
                 } else {
                     $this->addMessage($this->textMessages[1]);
                 }
@@ -93,11 +94,12 @@ class Reminder
      * It builds link for reminding e-mail
      *
      * @param string $hash
+     * @param string $email
      * @return string
      */
-    public function buildLink(string $hash): string
+    public function buildLink(string $hash, string $email): string
     {
-        return $link = "http://localhost/Blog-OOP-/public/frontend/reminder.php?remind=$hash";
+        return $link = "http://localhost/Blog-OOP-/public/frontend/reminder.php?remind=$hash&email=$email";
     }
 
     /**
@@ -129,6 +131,13 @@ class Reminder
         $updated_at = date("Y-m-d H:i:s");
         $this->db->prepare("UPDATE users SET remind_string = '$hash', updated_at = '$updated_at' WHERE email = '$email'");
         return ($this->db->execute());
+    }
+
+    public function checkHash(string $hash, string $email)
+    {
+        $this->db->prepare("SELECT * FROM `users` WHERE email='$email' AND remind_string = '$hash'");
+        $this->db->execute();
+        return $this->db->getRowCount() > 0 ? true : false;
     }
 
     /**

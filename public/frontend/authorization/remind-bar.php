@@ -32,8 +32,8 @@ if (isset($_POST['send'])) {
 
     $db = new Db;
     $session = new Session;
-    $remind = new Reminder($db, $user, $session, $mailer);
-    $remind->remind();
+    $remind = new Reminder($db);
+    $remind->sendRemind($user, $session, $mailer);
 
     if (!empty($remind->showMessage())) {
         $session = new Session;
