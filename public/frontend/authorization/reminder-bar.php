@@ -5,6 +5,7 @@ use Blog\Db;
 use Blog\Reminder;
 use Blog\Session;
 use Blog\Redirect;
+use Blog\User;
 
 //#REMIND
 $formVisible = false;
@@ -41,6 +42,22 @@ if (isset($_POST['change'])) {
         $session = new Session;
         Redirect::redirectBack($validate->showMessage(), $session);
     }
+
+    $user = new User;
+    $user->setEmail($email);
+    $user->setPassword($password);
+
+    $db = new DB;
+
+    $reminder = new Reminder($db);
+    $reminder->changePassword($user);
+
+    if (!$reminder->showMessage()) {
+        Redirect::redirectTo('public/frontend/index.php');
+    } else {
+        Redirect::redirectBack($validate->showMessage(), $session);
+    }
+
 }
 
 ?>

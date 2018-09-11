@@ -88,13 +88,13 @@ class Validate
         }
     }
 
-    public function validatePasswords(string $password, string $passwordProve): bool
+    public function validatePasswords(string $password, string $passwordProve)
     {
         $password = $this->validatePassword($password);
         $passwordProve = $this->validatePassword($passwordProve);
 
         if ($password === $passwordProve) {
-            return true;
+            return $password;
         } else {
             $this->addMessage($this->textMessages[4]);
             return false;

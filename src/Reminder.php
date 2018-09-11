@@ -8,6 +8,7 @@
 
 namespace Blog;
 
+use Blog\Register;
 
 class Reminder
 {
@@ -163,6 +164,16 @@ class Reminder
         $this->db->execute();
 
         return $this->db->getRowCount() === 0 ? false : true;
+    }
+
+    public function changePassword(User $user)
+    {
+        $this->user = $user;
+        $email = $this->user->getEmail();
+        $password = Register::generatePassword($this->user->getPassword());
+        $updated_at = date("Y-m-d H:i:s");
+        $this->db->prepare("UPDATE `users` SET `updated_at` = '$updated_at', `password` = '$password', `remind_string` = '' WHERE `email` = '$email'");
+        $this->db->execute();
     }
 
     /**

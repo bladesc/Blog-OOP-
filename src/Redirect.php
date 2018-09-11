@@ -22,7 +22,9 @@ class Redirect
         if (isset($value)) {
             $session->setSession('messages', $value);
         }
+
         header("Location:  $_SERVER[HTTP_REFERER]");
+        die;
     }
 
     /**
@@ -32,10 +34,10 @@ class Redirect
      * @param null $value
      * @param Session|null $session
      */
-    public static function redirectTo($to, $value = null,  Session $session = null)
+    public static function redirectTo($to, $value = null, Session $session = null)
     {
         $catalog = explode('/', $_SERVER['REQUEST_URI']);
-        $path = $_SERVER['SERVER_NAME'] . "/" . $catalog[1]. "/" . $to;
+        $path = $_SERVER['SERVER_NAME'] . "/" . $catalog[1] . "/" . $to;
 
         if (isset($value)) {
             $session->setSession('messages', $value);
