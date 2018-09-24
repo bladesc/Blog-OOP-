@@ -19,7 +19,7 @@ class Helper
      */
     public static function trimText(string $text, int $characters): string
     {
-        return substr($text, 0, $characters) . " ...";
+        return (isset($text)) ? substr($text, 0, $characters) . " ..." : "";
     }
 
     /**

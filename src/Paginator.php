@@ -27,38 +27,51 @@ class Paginator
     public function getPaginateEntries(int $id): array
     {
 
-        $id=$id-1;
+        $id = $id - 1;
         $totalEntries = count($this->entries);
-        $this->sites = floor($totalEntries/$this->amountPerSites);
+        $this->sites = ceil($totalEntries / $this->amountPerSites);
 
-        $from = $this->amountPerSites*$id;
-        $to = ($this->amountPerSites*$id) + $this->amountPerSites;
+        $from = $this->amountPerSites * $id;
+        $to = ($this->sites > 1) ? ($this->amountPerSites * $id) + $this->amountPerSites : $totalEntries;
 
+        if ($to > $totalEntries) {
+            $to = $totalEntries;
+        }
+      
         if (isset($id)) {
-            for ($i=$from; $i<$to; $i++) {
-               $this->paginateEntries[] = $this->entries[$i];
+            for ($i = $from; $i < $to; $i++) {
+                $this->paginateEntries[] = $this->entries[$i];
             }
         }
         return $this->paginateEntries;
 
     }
 
-    public function setCurrentPage(int $currentPage) {
+    public function setCurrentPage(int $currentPage)
+    {
         $this->currentPage = $currentPage;
     }
 
 
     public function getNavigation()
     {
-        $this->navigationHTML .= "<ul class='paginate'>";
-        for ($i=1; $i<=$this->sites; $i++) {
-            $currentClass = ($this->currentPage == $i) ? "currentItem" : "";
 
-            $this->navigationHTML .= ($i===1) ? "<li><a href='?id=$i'><<</a></li>" : "";
-            $this->navigationHTML .= "<li><a href='?id=$i' class='$currentClass'>$i</a></li>";
-            $this->navigationHTML .= ($i==$this->sites) ? "<li><a href='?id=$i'>>></a></li>" : "";
+        if ($this->sites > 1) {
+            $this->navigationHTML .= "<ul class='paginate'>";
+
+            for ($i = 1; $i <= $this->sites; $i++) {
+                $currentClass = ($this->currentPage == $i) ? "currentItem" : "";
+
+                $this->navigationHTML .= ($i === 1) ? "<li><a href='?id=$i'><<</a></li>" : "";
+                $this->navigationHTML .= "<li><a href='?id=$i' class='$currentClass'>$i</a></li>";
+                $this->navigationHTML .= ($i == $this->sites) ? "<li><a href='?id=$i'>>></a></li>" : "";
+            }
+
+            $this->navigationHTML .= "</ul>";
+        } else {
+            $this->navigationHTML = "";
         }
-        $this->navigationHTML .= "</ul>";
+
 
         return $this->navigationHTML;
     }
