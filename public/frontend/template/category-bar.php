@@ -24,7 +24,7 @@ $entries = $entry->getByCategory($category);
                 <p><?= Helper::trimText($entry['description'], 300) ?></p>
 
                 <div>
-                    <form method="get" action="../entry-view.php">
+                    <form method="get" action="../frontend/entry-view.php">
                         <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
                         <button type="submit">More</button>
                     </form>
