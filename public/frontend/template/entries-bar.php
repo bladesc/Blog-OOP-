@@ -10,7 +10,9 @@ $entry = new Entry($db);
 $entries = $entry->getAll();
 
 $paginator = new Paginator($entries, 2);
-$entries = $paginator->getPaginateEntries($_GET['id']);
+$pageId = isset($_GET['id']) ? $_GET['id'] : 1;
+$paginator->setCurrentPage($pageId);
+$entries = $paginator->getPaginateEntries($pageId);
 $navigation = $paginator->getNavigation();
 ?>
 
