@@ -29,15 +29,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/sterydy_anglia/header.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="blockmanufacturer.css" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/sterydy_anglia/blockmanufacturer.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,11 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Paginator.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Paginator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Paginator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="725">
+              <caret line="58" column="98" selection-start-line="58" selection-start-column="98" selection-end-line="58" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="233" column="26" selection-start-line="233" selection-start-column="26" selection-end-line="233" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -172,7 +172,6 @@
         <option value="$PROJECT_DIR$/public/frontend/authorization/login-bar.php" />
         <option value="$PROJECT_DIR$/src/Remind.php" />
         <option value="$PROJECT_DIR$/src/Email.php" />
-        <option value="$PROJECT_DIR$/public/frontend/assets/css/style.css" />
         <option value="$PROJECT_DIR$/../email_test.php" />
         <option value="$PROJECT_DIR$/../../php/php.ini" />
         <option value="$PROJECT_DIR$/../../sendmail/sendmail.ini" />
@@ -194,6 +193,7 @@
         <option value="$PROJECT_DIR$/config/config.php" />
         <option value="$PROJECT_DIR$/public/frontend/template/entries-bar.php" />
         <option value="$PROJECT_DIR$/src/Paginator.php" />
+        <option value="$PROJECT_DIR$/public/frontend/assets/css/style.css" />
       </list>
     </option>
   </component>
@@ -283,6 +283,21 @@
               <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -349,12 +364,12 @@
       <workItem from="1536608762788" duration="23473000" />
       <workItem from="1536893019495" duration="14567000" />
       <workItem from="1537752270325" duration="696000" />
-      <workItem from="1537787642208" duration="1804000" />
+      <workItem from="1537787642208" duration="2406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154326000" />
+    <option name="totallyTimeSpent" value="154928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -525,13 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="246" column="30" selection-start-line="246" selection-start-column="30" selection-end-line="246" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -754,8 +762,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paginator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="725">
+          <caret line="58" column="98" selection-start-line="58" selection-start-column="98" selection-end-line="58" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="233" column="26" selection-start-line="233" selection-start-column="26" selection-end-line="233" selection-end-column="26" />
         </state>
       </provider>
     </entry>

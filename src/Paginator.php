@@ -50,14 +50,13 @@ class Paginator
 
     public function getNavigation()
     {
-        $this->navigationHTML .= "<ul>";
+        $this->navigationHTML .= "<ul class='paginate'>";
         for ($i=1; $i<=$this->sites; $i++) {
             $currentClass = ($this->currentPage == $i) ? "currentItem" : "";
 
             $this->navigationHTML .= ($i===1) ? "<li><a href='?id=$i'><<</a></li>" : "";
-            $this->navigationHTML .= "<li><a href='?id=$i' $currentClass>$i</a></li>";
+            $this->navigationHTML .= "<li><a href='?id=$i' class='$currentClass'>$i</a></li>";
             $this->navigationHTML .= ($i==$this->sites) ? "<li><a href='?id=$i'>>></a></li>" : "";
-            $this->navigationHTML .= "<li><a href='?id={($i--)}'><</a></li>";
         }
         $this->navigationHTML .= "</ul>";
 
