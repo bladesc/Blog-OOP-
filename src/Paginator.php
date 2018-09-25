@@ -63,7 +63,10 @@ class Paginator
                 $currentClass = ($this->currentPage == $i) ? "currentItem" : "";
 
                 $this->navigationHTML .= ($i === 1) ? "<li><a href='?id=$i'><<</a></li>" : "";
-                $this->navigationHTML .= "<li><a href='?id=$i' class='$currentClass'>$i</a></li>";
+                if ($i>$this->currentPage-2 && $i<$this->currentPage+2 ) {
+                    $this->navigationHTML .= "<li><a href='?id=$i' class='$currentClass'>$i</a></li>";
+                }
+
                 $this->navigationHTML .= ($i == $this->sites) ? "<li><a href='?id=$i'>>></a></li>" : "";
             }
 
