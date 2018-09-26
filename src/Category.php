@@ -23,17 +23,32 @@ class Category
         $this->db = $db;
     }
 
-    public function getAll($enable = true) {
+    public function getAllWidthEntries($enable = true)
+    {
         if ($enable) {
             $this->db->prepare(
                 'SELECT categories.*,(
                           SELECT count(*) FROM entries where categories.id = entries.id_category
                           ) as entries
                       FROM categories');
+        }
 
-            if ($this->db->execute()) {
-                return $this->db->getRecords();
-            }
+        if ($this->db->execute()) {
+            return $this->db->getRecords();
+        } else {
+            return false;
+        }
+    }
+
+    public function getAll()
+    {
+        $this->db->prepare(
+            'SELECT * FROM categories');
+
+        if ($this->db->execute()) {
+            return $this->db->getRecords();
+        } else {
+            return false;
         }
     }
 }
