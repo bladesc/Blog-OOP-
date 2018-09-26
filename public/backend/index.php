@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 use Blog\Db;
 use Blog\Entry;
@@ -50,18 +50,52 @@ if (isset($_POST['modify'])) {
 
 ?>
 
-<?php foreach ($entries as $entry): ?>
-    <div><?= $entry['id'] ?></div>
-    <div><?= $entry['title'] ?></div>
-    <div><?= $entry['description'] ?></div>
-    <div><?= $entry['created_at'] ?></div>
-    <div><?= $entry['modified_at'] ?></div>
-    <form method="POST" action="">
-        <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
-        <button type="submit" name="delete">Delete</button>
-        <button type="submit" name="modify">Modify</button>
-    </form>
-<?php endforeach; ?>
+<?php include 'template/layout-top-bar.php' ?>
+<?php include 'template/login-bar.php' ?>
+
+<div id="left-bar">
+    <h2>MENU</h2>
+    <ul>
+        <li><a href="">entries</a></li>
+        <li><a href="">categories</a></li>
+        <li><a href="">comments</a></li>
+        <li><a href="">users</a></li>
+        <li><a href="">settings</a></li>
+
+    </ul>
+
+</div>
+<div id="right-bar">
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>created at</th>
+            <th>updated at</th>
+            <th>delete</th>
+            <th>mofdify</th>
+        </tr>
+        </thead>
+    </table>
+    <?php foreach ($entries as $entry): ?>
+        <div><?= $entry['id'] ?></div>
+        <div><?= $entry['title'] ?></div>
+        <div><?= $entry['description'] ?></div>
+        <div><?= $entry['created_at'] ?></div>
+        <div><?= $entry['modified_at'] ?></div>
+        <form method="POST" action="">
+            <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
+            <button type="submit" name="delete">Delete</button>
+            <button type="submit" name="modify">Modify</button>
+        </form>
+    <?php endforeach; ?>
+
+</div>
+<div id="bottom-bar"></div>
+
+
 
 
 
