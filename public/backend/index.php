@@ -7,6 +7,7 @@ use Blog\Entry;
 use Blog\Validate;
 use Blog\Session;
 use Blog\Redirect;
+use Blog\Helper;
 
 //#SESSION MESSAGES#
 $session = new Session;
@@ -78,20 +79,29 @@ if (isset($_POST['modify'])) {
             <th>mofdify</th>
         </tr>
         </thead>
-    </table>
-    <?php foreach ($entries as $entry): ?>
-        <div><?= $entry['id'] ?></div>
-        <div><?= $entry['title'] ?></div>
-        <div><?= $entry['description'] ?></div>
-        <div><?= $entry['created_at'] ?></div>
-        <div><?= $entry['modified_at'] ?></div>
-        <form method="POST" action="">
-            <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
-            <button type="submit" name="delete">Delete</button>
-            <button type="submit" name="modify">Modify</button>
-        </form>
-    <?php endforeach; ?>
+        <tbody>
+        <?php foreach ($entries as $entry): ?>
+            <tr>
+                <td><?= $entry['id'] ?></td>
+                <td><?php echo Helper::trimText($entry['title'], 20); ?></td>
+                <td><?php echo Helper::trimText($entry['description'], 50); ?></td>
+                <td><?= $entry['created_at'] ?></td>
+                <td><?= $entry['modified_at'] ?></td>
+                <form method="POST" action="">
+                    <td>
+                        <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
+                        <button type="submit" name="delete">Delete</button>
+                    </td>
+                    <td>
+                        <button type="submit" name="modify">Modify</button>
+                    </td>
 
+                </form>
+            </tr>
+        <?php endforeach; ?>
+
+        </tbody>
+    </table>
 </div>
 <div id="bottom-bar"></div>
 

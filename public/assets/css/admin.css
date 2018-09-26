@@ -75,3 +75,25 @@ body,html {
     padding:  40px;
     box-sizing: border-box;
 }
+
+#right-bar table {
+    width: 100%;
+}
+
+#right-bar table tbody td{
+   font-size: 14px;
+    color: #000;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#right-bar table th{
+    color: #ffffff;
+    background: #585858;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#right-bar table tbody tr:nth-child(even) {
+    background: #e2e2e2;
+}
