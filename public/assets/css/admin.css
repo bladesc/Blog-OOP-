@@ -97,3 +97,26 @@ body,html {
 #right-bar table tbody tr:nth-child(even) {
     background: #f5f5f5;
 }
+
+#add-new {
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+button {
+    padding: 4px 15px;
+    font-size: 12px;
+    border-radius: 2px;
+    background: #ececec;
+    border: 1px solid #bebebe;
+}
+
+#add-new button {
+    padding: 10px 20px;
+    background: #66d255;
+    border: 1px solid #2bab23;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}

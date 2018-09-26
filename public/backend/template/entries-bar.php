@@ -49,6 +49,11 @@ if (isset($_POST['modify'])) {
 ?>
 
 <div id="right-bar">
+    <div id="add-new">
+        <form method="POST" action="">
+            <button type="submit" name="addNew">Add new</button>
+        </form>
+    </div>
     <table>
         <thead>
         <tr>

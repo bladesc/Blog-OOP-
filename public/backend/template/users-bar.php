@@ -16,7 +16,7 @@ $users = $user->getAll($db);
 
 
 <div id="right-bar">
-    <div>
+    <div id="add-new">
         <form method="POST" action="">
                 <button type="submit" name="addNew">Add new</button>
         </form>
