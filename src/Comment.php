@@ -88,7 +88,9 @@ class Comment
         if ($idUser) {
             $query .= " WHERE id_user = $idUser";
         }
+
         $this->db->prepare($query);
+
         if ($this->db->execute()) {
             return $this->db->getRecords();
         }

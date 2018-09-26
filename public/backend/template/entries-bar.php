@@ -65,8 +65,8 @@ if (isset($_POST['modify'])) {
         <?php foreach ($entries as $entry): ?>
             <tr>
                 <td><?= $entry['id'] ?></td>
-                <td><?php echo Helper::trimText($entry['title'], 20); ?></td>
-                <td><?php echo Helper::trimText($entry['description'], 50); ?></td>
+                <td><?= Helper::trimText($entry['title'], 20); ?></td>
+                <td><?= Helper::trimText($entry['description'], 70); ?></td>
                 <td><?= $entry['created_at'] ?></td>
                 <td><?= $entry['modified_at'] ?></td>
                 <form method="POST" action="">

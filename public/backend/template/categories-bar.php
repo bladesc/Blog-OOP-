@@ -16,6 +16,9 @@ $categories = $category->getAll();
 
 
 <div id="right-bar">
+    <form method="POST" action="">
+        <button type="submit" name="addNew">Add new</button>
+    </form>
     <table>
         <thead>
         <tr>

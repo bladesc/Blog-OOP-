@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dom
- * Date: 26.09.2018
- * Time: 23:43
- */
+require __DIR__ . '/../../vendor/autoload.php';
+?>
+
+<?php include 'template/layout-top-bar.php' ?>
+<?php include 'template/login-bar.php' ?>
+<?php include 'template/left-bar.php' ?>
+<?php include 'template/users-bar.php' ?>
+<?php include 'template/bottom-bar.php' ?>

@@ -7,19 +7,18 @@
  */
 
 use Blog\Db;
-use Blog\Comment;
-use Blog\Helper;
+use Blog\User;
 
 $db = new Db;
-$comment = new Comment($db);
-$comments = $comment->getAll();
+$user = new User();
+$users = $user->getAll($db);
 ?>
 
 
 <div id="right-bar">
     <div>
         <form method="POST" action="">
-            <button type="submit" name="addNew">Add new</button>
+                <button type="submit" name="addNew">Add new</button>
         </form>
     </div>
 
@@ -27,33 +26,37 @@ $comments = $comment->getAll();
         <thead>
         <tr>
             <th>id</th>
-            <th>id user</th>
-            <th>id entry</th>
-            <th>content</th>
+            <th>email</th>
+            <th>login</th>
             <th>created_at</th>
             <th>updated_at</th>
             <th>delete</th>
-            <th>mofdify</th>
+            <th>modify</th>
+            <th>change password</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($comments as $comment): ?>
+        <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $comment['id'] ?></td>
-                <td><?= $comment['id_user'] ?></td>
-                <td><?= $comment['id_entry'] ?></td>
-                <td><?= Helper::trimText($comment['content'],80) ?></td>
-                <td><?= $comment['created_at'] ?></td>
-                <td><?= $comment['updated_at'] ?></td>
+                <td><?= $user['id'] ?></td>
+                <td><?= $user['email'] ?></td>
+                <td><?= $user['login'] ?></td>
+                <td><?= $user['created_at'] ?></td>
+                <td><?= $user['updated_at'] ?></td>
                 <form method="POST" action="">
                     <td>
-                        <input type="hidden" name="id" value="<?= $comment['id'] ?>" required>
+                        <input type="hidden" name="id" value="<?= $user['id'] ?>" required>
                         <button type="submit" name="delete">Delete</button>
                     </td>
                     <td>
                         <button type="submit" name="modify">Modify</button>
                     </td>
+                    <td>
+                        <button type="submit" name="changePassword">change password</button>
+                    </td>
                 </form>
+
+
             </tr>
         <?php endforeach; ?>
         </tbody>

@@ -68,4 +68,16 @@ class User
 
     }
 
+    public function getAll(Db $db)
+    {
+        $db->prepare(
+            'SELECT * FROM users');
+
+        if ($db->execute()) {
+            return $db->getRecords();
+        } else {
+            return false;
+        }
+    }
+
 }
