@@ -123,9 +123,24 @@ class Entry
     }
 
 
-    public function create(Category $category)
+    public function create()
     {
+        $this->db->prepare("
+        INSERT INTO entries (
+        title, 
+        description, 
+        created_at, 
+        modified_at, 
+        id_category) 
+        VALUES ( 
+        '$this->title',
+        '$this->description',
+        '$this->dateCreatedAt',
+        '$this->dateModifiedAt',
+        '$this->categoryId')
+        ");
 
+        return $this->db->execute();
     }
 
     public function delete(int $id)
