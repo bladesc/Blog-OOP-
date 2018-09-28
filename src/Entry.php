@@ -14,10 +14,10 @@ class Entry
 {
     private $id;
     private $title;
-    private $content;
-    private $category;
-    private $author;
-    private $createdAt;
+    private $description;
+    private $categoryId;
+    private $dateCreatedAt;
+    private $dateModifiedAt;
 
     private $db;
 
@@ -33,6 +33,51 @@ class Entry
         $this->db = $db;
     }
 
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function setCategoryId(string $categoryId): void
+    {
+        $this->categoryId = $categoryId;
+    }
+
+    public function setDateCreatedAt(string $dateCreatedAt): void
+    {
+        $this->dateCreatedAt = $dateCreatedAt;
+    }
+
+    public function setDateUpdatedAt(string $dateModifiedAt): void
+    {
+        $this->dateModifiedAt = $dateModifiedAt;
+    }
+
+    public function update()
+    {
+        $this->db->prepare("
+        UPDATE `entries` SET 
+        `title` = '$this->title',
+         `description` = '$this->description',
+         `created_at` = '$this->dateCreatedAt',
+         `modified_at` = '$this->dateModifiedAt',
+         `id_category` = '$this->categoryId'
+        WHERE `entries`.`id` = $this->id;
+        ");
+
+        return $this->db->execute();
+    }
+
     public function getAll()
     {
         $this->db->prepare('
@@ -44,7 +89,6 @@ class Entry
         if ($this->db->execute()) {
             return $this->db->getRecords();
         }
-
     }
 
     public function getByCategory(string $category)
@@ -94,9 +138,6 @@ class Entry
         }
     }
 
-    public function update(int $id)
-    {
-    }
 
     public function addMessage(string $message): void
     {
