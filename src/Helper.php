@@ -41,4 +41,9 @@ class Helper
     public static function createLink()
     {
     }
+
+    public static function showNowDate()
+    {
+        return date("Y-m-d H:i:s");
+    }
 }
