@@ -39,5 +39,5 @@ if (isset($_POST['login'])) {
                 <button type="submit" name="login">Log in</button>
             </form>
         </div>
-    <?php endif; ?>
+    <?php Redirect::redirectTo('public/frontend/login.php'); endif;  ?>
 </div>
