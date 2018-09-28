@@ -8,5 +8,9 @@
 ?>
 
 <div id="right-bar">
-in build
+    tytul,
+    opis,
+    meta tagi,
+    tryb konserwacji,
+    komentarze
 </div>

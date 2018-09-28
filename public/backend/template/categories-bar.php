@@ -37,7 +37,7 @@ $categories = $category->getAll();
                 <td><?= $category['id'] ?></td>
                 <td><?= $category['name'] ?></td>
                 <td><?= $category['enabled'] ?></td>
-                <form method="POST" action="">
+                <form method="POST" action="categories.php?action=add">
                     <td>
                         <input type="hidden" name="id" value="<?= $category['id'] ?>" required>
                         <button type="submit" name="delete">Delete</button>
