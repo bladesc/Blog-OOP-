@@ -16,7 +16,7 @@ if (isset($_POST['add'])) {
 };
 
 if (isset($_POST['update'])) {
-    Redirect::redirectTo('public/backend/entries.php?action=update');
+    Redirect::redirectTo('public/backend/entries.php?action=update&id=' . $_POST["id"] . '');
 }
 
 if (isset($_POST['delete'])) {

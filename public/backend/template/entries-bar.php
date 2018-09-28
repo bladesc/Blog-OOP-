@@ -11,22 +11,24 @@ if ($session->issetSession('messages')) {
 ?>
 
 <div id="right-bar">
-
     <?php
-    switch ($_GET['action']) {
-        case 'add':
-            include 'entries/create.php';
-            break;
-        case 'update':
-            include 'entries/update.php';
-            break;
-        case 'delete':
-            include 'entries/delete.php';
-            break;
-        default:
-            include 'entries/read.php';
+    if (!isset($_GET['action'])) {
+        include 'entries/read.php';
+    } else {
+        switch ($_GET['action']) {
+            case 'add':
+                include 'entries/create.php';
+                break;
+            case 'update':
+                include 'entries/update.php';
+                break;
+            case 'delete':
+                include 'entries/delete.php';
+                break;
+            default:
+                include 'entries/read.php';
+        }
     }
-
     ?>
 </div>
 
