@@ -1,4 +1,5 @@
 <?php
+
 use Blog\Validate;
 use Blog\Session;
 use Blog\Redirect;
@@ -28,6 +29,10 @@ if (isset($_POST['delete'])) {
 
 <form action="" method="post">
     <input type="hidden" name="id" value="<?= $_GET['id'] ?>" required>
-    Are you sure delete this item?
-    <button type="submit" name="delete">Delete</button>
+    <div>
+        Are you sure delete this item?
+    </div>
+    <div>
+        <button type="submit" name="delete">Delete</button>
+    </div>
 </form>

@@ -75,6 +75,6 @@ if (isset($_POST['create'])) {
         </select>
     </div>
     <div>
-        <button type="submit" name="create">Add new</button>
+        <button type="submit" name="create">Add</button>
     </div>
 </form>

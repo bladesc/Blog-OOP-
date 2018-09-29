@@ -18,9 +18,39 @@ class Category
 
     private $db;
 
+    private $errorMessages = [];
+
+    private $textMessages = [
+
+    ];
+
     public function __construct(DB $db)
     {
         $this->db = $db;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function setEnabled(bool $enabled): void
+    {
+        $this->enabled = $enabled;
+    }
+
+    public function create()
+    {
+        $this->db->prepare("
+        INSERT INTO categories (name, enabled)
+        VALUES
+        (
+        '$this->name',
+        '$this->enabled'
+        )
+        ");
+
+        return $this->db->execute();
     }
 
     public function getAllWidthEntries($enable = true)
@@ -50,5 +80,16 @@ class Category
         } else {
             return false;
         }
+    }
+
+
+    public function addMessage(string $message): void
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    public function showMessage(): array
+    {
+        return $this->errorMessages;
     }
 }
