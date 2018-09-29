@@ -12,7 +12,7 @@ $entries = $entry->getAll();
 
 //modify
 if (isset($_POST['create'])) {
-    Redirect::redirectTo('public/backend/entries.php?action=add');
+    Redirect::redirectTo('public/backend/entries.php?action=create');
 };
 
 if (isset($_POST['update'])) {

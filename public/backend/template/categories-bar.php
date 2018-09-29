@@ -16,7 +16,7 @@ if ($session->issetSession('messages')) {
         include 'categories/read.php';
     } else {
         switch ($_GET['action']) {
-            case 'add':
+            case 'create':
                 include 'categories/create.php';
                 break;
             case 'update':

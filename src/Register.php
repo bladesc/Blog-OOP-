@@ -89,7 +89,7 @@ class Register
             "INSERT INTO users (
                     email, 
                     password, 
-                    login
+                    login,
                     ) VALUES (
                     '" . $this->user->getEmail() . "',
                     '$password',

@@ -25,8 +25,8 @@ if (isset($_POST['login'])) {
         $session = new Session;
         Redirect::redirectTo('public/frontend/login.php', $validate->showMessage(), $session);
     }
-
-    $user = new User;
+    $db = new Db;
+    $user = new User($db);
     $user->setEmail($email);
     $user->setPassword($password);
 

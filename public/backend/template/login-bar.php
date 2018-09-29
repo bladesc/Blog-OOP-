@@ -15,7 +15,7 @@ if (isset($_POST['logout'])) {
     }
 }
 
-if (isset($_POST['login'])) {
+if (isset($_POST['loginButton'])) {
     Redirect::redirectTo('public/frontend/login.php');
 }
 ?>
@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
     <?php else: ?>
         <div>
             <form method="POST" action="">
-                <button type="submit" name="login">Log in</button>
+                <button type="submit" name="loginButton">Log in</button>
             </form>
         </div>
     <?php Redirect::redirectTo('public/frontend/login.php'); endif;  ?>

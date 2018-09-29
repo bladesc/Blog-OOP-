@@ -5,10 +5,6 @@
  * Date: 26.09.2018
  * Time: 23:49
  */
-
-use Blog\Db;
-use Blog\Comment;
-use Blog\Helper;
 use Blog\Session;
 
 //#SESSION MESSAGES#
@@ -26,7 +22,7 @@ if ($session->issetSession('messages')) {
         include 'comments/read.php';
     } else {
         switch ($_GET['action']) {
-            case 'add':
+            case 'create':
                 include 'comments/create.php';
                 break;
             case 'update':

@@ -16,6 +16,12 @@ class User
     private $login;
     private $email;
     private $password;
+    private $db;
+
+    public function __construct(DB $db)
+    {
+        $this->db = $db;
+    }
 
     public function setLogin(string $login)
     {

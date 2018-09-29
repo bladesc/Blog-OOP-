@@ -19,7 +19,7 @@ $categories = $category->getAll();
 
 //modify
 if (isset($_POST['create'])) {
-    Redirect::redirectTo('public/backend/categories.php?action=add');
+    Redirect::redirectTo('public/backend/categories.php?action=create');
 };
 
 if (isset($_POST['update'])) {
