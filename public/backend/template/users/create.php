@@ -39,10 +39,9 @@ if (isset($_POST['create'])) {
     if (!empty($register->showMessage())) {
         $session = new Session;
         Redirect::redirectTo('public/backend/users.php',$register->showMessage(), $session);
-    } else {
-        Redirect::redirectTo('public/backend/users.php');
     }
 
+    Redirect::redirectTo('public/backend/users.php', ['added successfully'], $session);
 }
 ?>
 

@@ -92,8 +92,8 @@
       <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/backend/template/categories/create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="675">
+              <caret line="41" column="93" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="93" />
               <folding>
                 <element signature="e#87#105#0#PHP" expanded="true" />
               </folding>
@@ -101,20 +101,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entries-bar.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entries-bar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/template/entries-bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="300">
+              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/backend/template/entries/delete.php">
+      <file leaf-file-name="create.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/backend/template/users/create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="600">
+              <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+              <folding>
+                <element signature="e#87#99#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,7 +214,6 @@
         <option value="$PROJECT_DIR$/public/backend/template/entries/read.php" />
         <option value="$PROJECT_DIR$/public/backend/template/categories/read.php" />
         <option value="$PROJECT_DIR$/public/frontend/authorization/register-bar.php" />
-        <option value="$PROJECT_DIR$/public/backend/template/users/create.php" />
         <option value="$PROJECT_DIR$/public/backend/template/login-bar.php" />
         <option value="$PROJECT_DIR$/public/backend/template/users/read.php" />
         <option value="$PROJECT_DIR$/public/assets/css/admin.css" />
@@ -231,6 +233,7 @@
         <option value="$PROJECT_DIR$/public/backend/template/categories/delete.php" />
         <option value="$PROJECT_DIR$/public/backend/template/categories/create.php" />
         <option value="$PROJECT_DIR$/public/frontend/template/entries-bar.php" />
+        <option value="$PROJECT_DIR$/public/backend/template/users/create.php" />
       </list>
     </option>
   </component>
@@ -277,7 +280,7 @@
       <path value="$PROJECT_DIR$/vendor/components/jquery" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="67" />
     <option name="y" value="82" />
     <option name="width" value="1095" />
@@ -333,30 +336,6 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="comments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blog-OOP-" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Blog-OOP-" type="b2602c69:ProjectViewProjectNode" />
@@ -455,16 +434,15 @@
       <workItem from="1537993983810" duration="7830000" />
       <workItem from="1538163845044" duration="15000" />
       <workItem from="1538164284141" duration="17498000" />
-      <workItem from="1538256556064" duration="4257000" />
+      <workItem from="1538256556064" duration="5074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192721000" />
+    <option name="totallyTimeSpent" value="193538000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16302083" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -760,16 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/backend/template/users/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding>
-            <element signature="e#87#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/backend/template/entries/read.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -865,20 +833,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/frontend/template/entries-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/backend/template/categories/create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="675">
+          <caret line="41" column="93" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="93" />
           <folding>
             <element signature="e#87#105#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/frontend/template/entries-bar.php">
+    <entry file="file://$PROJECT_DIR$/public/backend/template/users/create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="600">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding>
+            <element signature="e#87#99#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
