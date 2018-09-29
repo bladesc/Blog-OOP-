@@ -21,7 +21,8 @@ class Category
     private $errorMessages = [];
 
     private $textMessages = [
-
+        "Deleted successful",
+        "Deleted error"
     ];
 
     public function __construct(DB $db)
@@ -82,6 +83,15 @@ class Category
         }
     }
 
+    public function delete(int $id)
+    {
+        $this->db->prepare("DELETE FROM categories where id = $id");
+        if ($this->db->execute()) {
+            $this->addMessage($this->textMessages[0]);
+        } else {
+            $this->addMessage($this->textMessages[1]);
+        }
+    }
 
     public function addMessage(string $message): void
     {
