@@ -11,7 +11,7 @@ $entry = new Entry($db);
 $entries = $entry->getAll();
 
 //modify
-if (isset($_POST['add'])) {
+if (isset($_POST['create'])) {
     Redirect::redirectTo('public/backend/entries.php?action=add');
 };
 
@@ -29,7 +29,7 @@ if (isset($_POST['delete'])) {
 
 <div id="add-new">
     <form method="POST" action="">
-        <button type="submit" name="add">Add new</button>
+        <button type="submit" name="create">Add new</button>
     </form>
 </div>
 <table>

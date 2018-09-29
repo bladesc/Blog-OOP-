@@ -13,13 +13,13 @@ namespace Blog;
 
 class Comment
 {
+    private $id;
     private $idEntry;
     private $author;
     private $content;
     private $createdAt;
-
+    private $updatedAt;
     private $db;
-
 
     private $errorMessages = [];
 
@@ -38,6 +38,16 @@ class Comment
         $this->content = $content;
     }
 
+    public function setDateCreatedAt(string $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    public function setDateUpdatedAt(string $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
     public function setAuthor(int $id): void
     {
         $this->author = $id;
@@ -45,6 +55,11 @@ class Comment
 
     public function setIdEntry(int $idEntry) {
         $this->idEntry = $idEntry;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     public function create()
@@ -56,6 +71,27 @@ class Comment
         } else {
             $this->addMessage($this->textMessages[0]);
         }
+    }
+
+    public function delete(int $id)
+    {
+        $this->db->prepare("DELETE FROM comments where id = $id");
+        if (!$this->db->execute()) {
+            $this->addMessage($this->textMessages[1]);
+        }
+    }
+
+    public function update()
+    {
+        $this->db->prepare("
+        UPDATE `comments` SET 
+        `content` = '$this->content',
+         `created_at` = '$this->createdAt',
+         `updated_at` = '$this->updatedAt'
+        WHERE `comments`.`id` = $this->id;
+        ");
+
+        return $this->db->execute();
     }
 
     public function insertComment(): bool
@@ -109,15 +145,14 @@ class Comment
         }
     }
 
-    public function delete()
+    public function getById(int $id): array
     {
-
+        $this->db->prepare("SELECT * FROM comments WHERE id = $id");
+        if ($this->db->execute()) {
+            return $this->db->getRecord();
+        }
     }
 
-    public function update()
-    {
-
-    }
 
     public function addMessage(string $message): void
     {
