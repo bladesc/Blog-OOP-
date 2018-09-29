@@ -21,7 +21,7 @@ $db = new Db;
 $category = new Category($db);
 $categories = $category->getAll();
 
-if (isset($_POST['create'])) {
+if (isset($_POST['update'])) {
 
     $validate = new Validate;
     $id = $validate->validateId($_POST['id']);
@@ -50,6 +50,8 @@ if (isset($_POST['create'])) {
         $session = new Session;
         Redirect::redirectBack($entry->showMessage(), $session);
     }
+
+    Redirect::redirectTo('public/backend/entries.php', 'update successfully', $session);
 }
 ?>
 
@@ -75,11 +77,11 @@ if (isset($_POST['create'])) {
         <label for="category">Category</label>
         <select id="category" name="category">
             <?php foreach ($categories as $category): ?>
-                <option <?php if ($category['id'] === $entries['id_category']) { echo 'selected'; }?> value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                <option <?php if ($category['id'] == $entries['id_category']) { echo 'selected'; }?> value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
             <?php endforeach; ?>
         </select>
     </div>
     <div>
-        <button type="submit" name="create">Update</button>
+        <button type="submit" name="update">Update</button>
     </div>
 </form>

@@ -24,6 +24,8 @@ if (isset($_POST['delete'])) {
         $session = new Session;
         Redirect::redirectBack($entry->showMessage(), $session);
     }
+
+    Redirect::redirectTo('public/backend/entries.php', 'delete successfully', $session);
 }
 ?>
 

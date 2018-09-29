@@ -45,6 +45,8 @@ if (isset($_POST['create'])) {
         $session = new Session;
         Redirect::redirectBack($entry->showMessage(), $session);
     }
+
+    Redirect::redirectTo('public/backend/entries.php', 'update successfully', $session);
 }
 ?>
 

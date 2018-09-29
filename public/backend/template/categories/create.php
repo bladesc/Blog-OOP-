@@ -38,6 +38,8 @@ if (isset($_POST['create'])) {
         $session = new Session;
         Redirect::redirectBack($category->showMessage(), $session);
     }
+
+    Redirect::redirectTo('public/backend/categories.php', 'update successfully', $session);
 }
 ?>
 

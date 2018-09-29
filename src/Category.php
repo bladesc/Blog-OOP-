@@ -40,6 +40,11 @@ class Category
         $this->enabled = $enabled;
     }
 
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function create()
     {
         $this->db->prepare("
@@ -49,6 +54,18 @@ class Category
         '$this->name',
         '$this->enabled'
         )
+        ");
+
+        return $this->db->execute();
+    }
+
+    public function update()
+    {
+        $this->db->prepare("
+        UPDATE categories SET 
+        name = '$this->name',
+        enabled = '$this->enabled'
+        WHERE id = $this->id;
         ");
 
         return $this->db->execute();
@@ -86,10 +103,16 @@ class Category
     public function delete(int $id)
     {
         $this->db->prepare("DELETE FROM categories where id = $id");
-        if ($this->db->execute()) {
-            $this->addMessage($this->textMessages[0]);
-        } else {
+        if (!$this->db->execute()) {
             $this->addMessage($this->textMessages[1]);
+        }
+    }
+
+    public function getById(int $id): array
+    {
+        $this->db->prepare("SELECT * FROM categories WHERE id = $id");
+        if ($this->db->execute()) {
+            return $this->db->getRecord();
         }
     }
 

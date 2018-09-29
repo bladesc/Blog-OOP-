@@ -146,9 +146,7 @@ class Entry
     public function delete(int $id)
     {
         $this->db->prepare("DELETE FROM entries where id = $id");
-        if ($this->db->execute()) {
-            $this->addMessage($this->textMessages[0]);
-        } else {
+        if (!$this->db->execute()) {
             $this->addMessage($this->textMessages[1]);
         }
     }

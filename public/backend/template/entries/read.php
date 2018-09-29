@@ -52,7 +52,7 @@ if (isset($_POST['delete'])) {
             <td><?= Helper::trimText($entry['description'], 70); ?></td>
             <td><?= $entry['created_at'] ?></td>
             <td><?= $entry['modified_at'] ?></td>
-            <form method="get" action="">
+            <form method="post" action="">
                 <td>
                     <input type="hidden" name="id" value="<?= $entry['id'] ?>" required>
                     <button type="submit" name="delete">Delete</button>
