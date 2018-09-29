@@ -27,7 +27,7 @@ if (isset($_POST['update'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectBack($validate->showMessage(), $session);
+        Redirect::redirectTo('public/backend/comments.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -40,10 +40,10 @@ if (isset($_POST['update'])) {
 
     if (!empty($comment->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo($comment->showMessage(), $session);
+        Redirect::redirectTo('public/backend/comments.php', $comment->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/comments.php', 'update successfully', $session);
+    Redirect::redirectTo('public/backend/comments.php', ['update successfully'], $session);
 }
 ?>
 

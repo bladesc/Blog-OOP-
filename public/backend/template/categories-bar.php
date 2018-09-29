@@ -2,13 +2,21 @@
 
 use Blog\Session;
 
-//#SESSION MESSAGES#
+//#########SESSION MESSAGES
 $session = new Session;
 if ($session->issetSession('messages')) {
-    print_r($_SESSION['messages']);
+    $errors = $_SESSION['messages'];
     $session->deleteSession('messages');
 }
 ?>
+
+<?php if (isset($errors)): ?>
+    <div class="errors">
+        <?php foreach ($errors as $error): ?>
+            <p><?= $error ?></p>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 
 <div id="right-bar">
     <?php

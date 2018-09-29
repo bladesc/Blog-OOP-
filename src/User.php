@@ -18,6 +18,17 @@ class User
     private $password;
     private $db;
 
+    private $errorMessages = [];
+
+    /**
+     * Array with bodies of messages
+     *
+     * @var array
+     */
+    private $textMessages = [
+        "Error deleting"
+    ];
+
     public function __construct(DB $db)
     {
         $this->db = $db;
@@ -84,6 +95,34 @@ class User
         } else {
             return false;
         }
+    }
+
+    public function delete(int $id)
+    {
+        $this->db->prepare("DELETE FROM users where id = $id");
+        if (!$this->db->execute()) {
+            $this->addMessage($this->textMessages[0]);
+        }
+    }
+
+    /**
+     * It adds messages to array
+     *
+     * @param string $message
+     */
+    public function addMessage(string $message): void
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    /**
+     * It shows messages
+     *
+     * @return array
+     */
+    public function showMessage(): array
+    {
+        return $this->errorMessages;
     }
 
 }

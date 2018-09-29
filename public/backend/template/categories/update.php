@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectBack($validate->showMessage(), $session);
+        Redirect::redirectTo('public/backend/categories.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -38,10 +38,10 @@ if (isset($_POST['update'])) {
 
     if (!empty($categories->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo($categories->showMessage(), $session);
+        Redirect::redirectTo('public/backend/categories.php', $categories->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/categories.php', 'update successfully', $session);
+    Redirect::redirectTo('public/backend/categories.php', ['update successfully'], $session);
 }
 ?>
 
