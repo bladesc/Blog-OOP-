@@ -28,25 +28,34 @@ class Installation
         $this->install();
     }
 
-    public function check()
+    /**
+     * It checks if database exist
+     *
+     * @return bool
+     */
+    public function check(): bool
     {
         $this->db->prepare("SELECT * FROM categories");
         return $this->db->execute();
 
     }
 
-    public function install()
+    /**
+     * It init install database and data
+     */
+    public function install(): void
     {
-
         if (!$this->check()) {
             $this->installTables();
         } else {
             $this->addMessage($this->textMessages[0]);
         }
-
     }
 
-    private function installTables()
+    /**
+     * It creates tables in database
+     */
+    private function installTables(): void
     {
          $this->db->prepare("CREATE TABLE `categories` (
               `id` int(11) NOT NULL AUTO_INCREMENT,
