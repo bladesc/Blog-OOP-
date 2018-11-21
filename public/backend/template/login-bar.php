@@ -23,7 +23,7 @@ if (isset($_POST['loginButton'])) {
 <div id="box-login">
     <?php if ($loggedUser): ?>
         <div>
-            Your e-mial: <span><?= $loggedUser['email'] ?></span>
+            Your e-mail: <span><?= $loggedUser['email'] ?></span>
         </div>
         <div>
             Your login: <span><?= $loggedUser['login'] ?></span>

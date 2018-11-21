@@ -17,7 +17,8 @@ class Installation
 
     private $textMessages = [
         "Database is yet installed",
-        "Database is successfully installed"
+        "Database is successfully installed",
+        "Data are successfully installed"
     ];
 
     public function __construct(Db $db)
@@ -47,6 +48,7 @@ class Installation
     {
         if (!$this->check()) {
             $this->installTables();
+            $this->installData();
         } else {
             $this->addMessage($this->textMessages[0]);
         }
@@ -57,7 +59,7 @@ class Installation
      */
     private function installTables(): void
     {
-         $this->db->prepare("CREATE TABLE `categories` (
+        $this->db->prepare("CREATE TABLE `categories` (
               `id` int(11) NOT NULL AUTO_INCREMENT,
               `name` varchar(255) NOT NULL,
               `enabled` tinyint(1) NOT NULL,
@@ -65,7 +67,7 @@ class Installation
               ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8");
         $categories = $this->db->execute();
 
-        if ($categories) {
+        if (isset($categories)) {
             $this->db->prepare("CREATE TABLE `users` (
                  `id` int(11) NOT NULL AUTO_INCREMENT,
                  `email` varchar(255) NOT NULL,
@@ -80,8 +82,8 @@ class Installation
             $users = $this->db->execute();
         }
 
-        if ($users) {
-             $this->db->prepare("CREATE TABLE `entries` (
+        if (isset($users)) {
+            $this->db->prepare("CREATE TABLE `entries` (
                  `id` int(11) NOT NULL AUTO_INCREMENT,
                  `title` varchar(255) DEFAULT NULL,
                  `description` text,
@@ -95,7 +97,7 @@ class Installation
             $entries = $this->db->execute();
         }
 
-        if ($entries) {
+        if (isset($entries)) {
             $this->db->prepare("CREATE TABLE `comments` (
                  `id` int(11) NOT NULL AUTO_INCREMENT,
                  `id_user` int(11) DEFAULT NULL,
@@ -112,14 +114,69 @@ class Installation
             $comments = $this->db->execute();
         }
 
-        if ($comments) {
+        if (isset($comments)) {
             $this->addMessage($this->textMessages[1]);
         }
     }
 
     private function installData()
     {
+        $this->db->prepare("INSERT INTO `categories` (
+                `id`, 
+                `name`, 
+                `enabled`) VALUES (
+                1, 
+                'home', 
+                '1'), (
+                2, 
+                'other', 
+                '1');");
+        $categories = $this->db->execute();
 
+        if (isset($categories)) {
+            $password = Register::generatePassword('haslo12345');
+            $date = date("Y-m-d H:i:s");
+
+            $this->db->prepare("INSERT INTO `users` (
+                `id`, 
+                `email`, 
+                `password`, 
+                `login`, 
+                `created_at`, 
+                `updated_at`, 
+                `remind_string`) VALUES (
+                1, 
+                'any@email.pl', 
+                '$password', 
+                'login', 
+                '$date', 
+                '$date', 
+                NULL);");
+            $users = $this->db->execute();
+        }
+
+        if (isset($users)) {
+            $date = date("Y-m-d H:i:s");
+
+            $this->db->prepare("INSERT INTO `entries` (
+                `id`, 
+                `title`, 
+                `description`, 
+                `created_at`, 
+                `modified_at`, 
+                `id_category`) VALUES (
+                NULL, 
+                'lorem ipsum dolor sit amet ', 
+                'lorem ipsum dolor sit amet lorem ipsum dolor sit amet', 
+                '$date', 
+                '$date', 
+                '1');");
+            $entries = $this->db->execute();
+        }
+
+        if (isset($entries)) {
+            $this->addMessage($this->textMessages[2]);
+        }
     }
 
     /**
