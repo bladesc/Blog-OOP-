@@ -12,6 +12,9 @@ namespace Blog;
 
 class Category
 {
+    /**
+     * @var
+     */
     private $id;
     private $name;
     private $enabled;
@@ -25,26 +28,51 @@ class Category
         "Deleted error"
     ];
 
+    /**
+     * Category constructor.
+     *
+     * @param DB $db
+     */
     public function __construct(DB $db)
     {
         $this->db = $db;
     }
 
+    /**
+     * It sets name for category
+     *
+     * @param string $name
+     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
+    /**
+     * It sets on/off for category
+     *
+     * @param bool $enabled
+     */
     public function setEnabled(bool $enabled): void
     {
         $this->enabled = $enabled;
     }
 
+    /**
+     * It sets id for category
+     *
+     * @param int $id
+     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
+    /**
+     * It creates category
+     *
+     * @return bool
+     */
     public function create()
     {
         $this->db->prepare("
@@ -59,6 +87,11 @@ class Category
         return $this->db->execute();
     }
 
+    /**
+     * It updates category by id
+     *
+     * @return bool
+     */
     public function update()
     {
         $this->db->prepare("
@@ -71,6 +104,12 @@ class Category
         return $this->db->execute();
     }
 
+    /**
+     * It returns amount of entries in passed category
+     *
+     * @param bool $enable
+     * @return array|bool
+     */
     public function getAllWidthEntries($enable = true)
     {
         if ($enable) {
@@ -88,6 +127,11 @@ class Category
         }
     }
 
+    /**
+     * It returns all data from categories table
+     *
+     * @return array|bool
+     */
     public function getAll()
     {
         $this->db->prepare(
@@ -100,6 +144,11 @@ class Category
         }
     }
 
+    /**
+     * It deletes data by id
+     *
+     * @param int $id
+     */
     public function delete(int $id)
     {
         $this->db->prepare("DELETE FROM categories where id = $id");
@@ -108,6 +157,12 @@ class Category
         }
     }
 
+    /**
+     * It return data by id
+     *
+     * @param int $id
+     * @return array
+     */
     public function getById(int $id): array
     {
         $this->db->prepare("SELECT * FROM categories WHERE id = $id");
@@ -116,11 +171,21 @@ class Category
         }
     }
 
+    /**
+     * It adds messages to array
+     *
+     * @param string $message
+     */
     public function addMessage(string $message): void
     {
         $this->errorMessages[] = $message;
     }
 
+    /**
+     * It shows messages
+     *
+     * @return array
+     */
     public function showMessage(): array
     {
         return $this->errorMessages;
