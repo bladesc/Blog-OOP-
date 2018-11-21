@@ -26,7 +26,8 @@ if (isset($_POST['register'])) {
         Redirect::redirectTo('public/frontend/register.php', $validate->showMessage(), $session);
     }
 
-    $user = new User;
+    $db = new Db;
+    $user = new User($db);
     $user->setLogin($login);
     $user->setEmail($email);
     $user->setPassword($password);
@@ -42,7 +43,7 @@ if (isset($_POST['register'])) {
     } else {
         Redirect::redirectTo('public/frontend/index.php');
     }
-    print_r($_SESSION);
+
 }
 
 

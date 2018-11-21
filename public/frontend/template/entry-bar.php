@@ -22,7 +22,7 @@ $entry = $entry->getById($id);
                 <div>Category: <span><?= $entry['category'] ?></span></div>
             </div>
             <h2><?= $entry['title'] ?></h2>
-            <p><?= Helper::trimText($entry['description'], 300) ?></p>
+            <p><?= $entry['description'] ?></p>
 
         </div>
 </div>

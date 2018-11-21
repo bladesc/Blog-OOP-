@@ -43,12 +43,12 @@ if (isset($_POST['change'])) {
         Redirect::redirectBack($validate->showMessage(), $session);
     }
 
-    $user = new User;
+    $db = new DB;
+    $user = new User($db);
     $user->setEmail($email);
     $user->setPassword($password);
 
     $db = new DB;
-
     $reminder = new Reminder($db);
     $reminder->changePassword($user);
 

@@ -230,6 +230,37 @@ form a {
     color: #585858;
 }
 
+ul.paginate {
+    list-style-type: none;
+    marign: 20px 0 0 0;
+    padding: 0;
+}
+
+ul.paginate li {
+    display: inline-block;
+}
+
+ul.paginate li a {
+
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    display: block;
+    border: 1px solid #000;
+    margin: 2px;
+    text-align: center;
+    line-height: 30px;
+    color: #585858;
+
+}
+
+.currentItem {
+    border-color: #007edf;
+    background: #007edf;
+    color: #fff !important;
+    font-weight: bold;
+}
+
 .login-button {
     width: 40%;
     text-align: center;

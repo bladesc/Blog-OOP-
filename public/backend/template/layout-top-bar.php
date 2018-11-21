@@ -8,7 +8,7 @@
     <meta name="description" content="This is blog based on php objected model.">
     <meta name="author" content="Damian Szczęsny">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 
 </head>
 <body>

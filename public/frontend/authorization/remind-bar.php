@@ -25,7 +25,8 @@ if (isset($_POST['send'])) {
         Redirect::redirectTo('public/frontend/remind.php', $validate->showMessage(), $session);
     }
 
-    $user = new User;
+    $db = new Db;
+    $user = new User($db);
     $user->setEmail($email);
 
     $mailer = new Mailer;

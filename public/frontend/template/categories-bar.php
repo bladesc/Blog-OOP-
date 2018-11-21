@@ -6,7 +6,7 @@ use Blog\Category;
 //#CATEGORIES
 $db = new Db;
 $category = new Category($db);
-$categories = $category->getAll(1);
+$categories = $category->getAllWidthEntries(1);
 ?>
 
 
