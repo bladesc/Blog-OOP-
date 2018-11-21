@@ -21,6 +21,11 @@ class Installation
         "Data are successfully installed"
     ];
 
+    /**
+     * Installation constructor.
+     *
+     * @param Db $db
+     */
     public function __construct(Db $db)
     {
         if ($this->db == null) {
@@ -43,6 +48,8 @@ class Installation
 
     /**
      * It init install database and data
+     *
+     * @return void
      */
     public function install(): void
     {
@@ -56,6 +63,8 @@ class Installation
 
     /**
      * It creates tables in database
+     *
+     * @return void
      */
     private function installTables(): void
     {
@@ -119,7 +128,13 @@ class Installation
         }
     }
 
-    private function installData()
+    /**
+     * It install example data
+     *
+     * @return void
+     */
+
+    private function installData(): void
     {
         $this->db->prepare("INSERT INTO `categories` (
                 `id`, 
