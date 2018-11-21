@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Blog;
 
-include (__DIR__.'/../config/config.php');
+include(__DIR__ . '/../config/config.php');
 
 class Db
 {
@@ -22,6 +22,8 @@ class Db
     private $dbName = DB_NAME;
     private $stmt;
 
+    private $errorMessages = [];
+
     public function __construct()
     {
         $dsn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
@@ -30,7 +32,7 @@ class Db
             $this->dbConnection = new \PDO($dsn, $this->dbLogin, $this->dbPassword);
             $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            echo 'Connection failed: ' . $e->getMessage();
+            $this->addMessage('Connection failed: ' . $e->getMessage());
         }
     }
 
@@ -39,7 +41,7 @@ class Db
         try {
             $this->stmt = $this->dbConnection->prepare($query);
         } catch (\PDOException $e) {
-            echo 'Prepare failed: ' . $e->getMessage();
+            $this->addMessage('Prepare failed: ' . $e->getMessage());
         }
     }
 
@@ -48,7 +50,7 @@ class Db
         try {
             return $this->stmt->execute();
         } catch (\PDOException $e) {
-            echo 'Connection failed: ' . $e->getMessage();
+            $this->addMessage('Connection failed: ' . $e->getMessage());
             return false;
         }
     }
@@ -83,46 +85,35 @@ class Db
         return $this->stmt->rollBack();
     }
 
-    /*public function selectData(string $what = '*', string $from = '', array $where = [], $limit = false, array $orderBy = [])
-    {
-        $query = "SELECT $what";
-        $query .= " FROM $from";
-
-        if (!empty($where)) {
-            $query .= " WHERE $where[0] $where[1] $where[2]";
-        }
-        if ($limit) {
-            $query .= " LIMIT $limit";
-        }
-        if (!empty($orderBy)) {
-            $query .= " ORDER BY {$orderBy[0]} {$orderBy[1]}";
-        }
-        //echo $query; die;
-        $selectQuery = $this->dbConnection->prepare($query);
-        try {
-            $selectQuery->execute();
-        } catch (\PDOException $e) {
-            return 'Query failed: ' . $e->getMessage();
-        }
-
-        $result = $selectQuery->fetch();
-
-        if ($selectQuery->rowCount() > 0) {
-            return $result;
-        } else {
-            return 'No data found';
-        }
-    }*/
 
     public function closeConnection()
     {
         $this->dbConnection = null;
     }
 
-    public function lastInsertId(): int
+    public function lastInsertId()
     {
         return $this->dbConnection->lastInsertId();
     }
 
+    /**
+     * It adds messages to array
+     *
+     * @param string $message
+     */
+    public function addMessage(string $message): void
+    {
+        $this->errorMessages[] = $message;
+    }
+
+    /**
+     * It shows messages
+     *
+     * @return array
+     */
+    public function showMessage(): array
+    {
+        return $this->errorMessages;
+    }
 
 }
