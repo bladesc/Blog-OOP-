@@ -46,10 +46,10 @@ class Db
     public function execute()
     {
         try {
-            $result = $this->stmt->execute();
-            return $result;
+            return $this->stmt->execute();
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
+            return false;
         }
     }
 
