@@ -22,7 +22,7 @@ if (isset($_POST['create'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/users.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('users.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -38,10 +38,10 @@ if (isset($_POST['create'])) {
 
     if (!empty($register->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/users.php',$register->showMessage(), $session);
+        Redirect::redirectTo('users.php',$register->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/users.php', ['added successfully'], $session);
+    Redirect::redirectTo('users.php', ['added successfully'], $session);
 }
 ?>
 

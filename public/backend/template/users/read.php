@@ -18,15 +18,15 @@ $users = $user->getAll($db);
 
 //modify
 if (isset($_POST['create'])) {
-    Redirect::redirectTo('public/backend/users.php?action=create');
+    Redirect::redirectTo('users.php?action=create');
 };
 
 if (isset($_POST['update'])) {
-    Redirect::redirectTo('public/backend/users.php?action=update&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('users.php?action=update&id=' . $_POST["id"] . '');
 }
 
 if (isset($_POST['delete'])) {
-    Redirect::redirectTo('public/backend/users.php?action=delete&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('users.php?action=delete&id=' . $_POST["id"] . '');
 }
 ?>
 

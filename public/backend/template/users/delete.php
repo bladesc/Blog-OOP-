@@ -13,7 +13,7 @@ if (isset($_POST['delete'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/users.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('users.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -22,10 +22,10 @@ if (isset($_POST['delete'])) {
 
     if (!empty($user->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/users.php', $user->showMessage(), $session);
+        Redirect::redirectTo('users.php', $user->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/users.php', ['delete successfully'], $session);
+    Redirect::redirectTo('users.php', ['delete successfully'], $session);
 }
 ?>
 

@@ -19,15 +19,15 @@ $categories = $category->getAll();
 
 //modify
 if (isset($_POST['create'])) {
-    Redirect::redirectTo('public/backend/categories.php?action=create');
+    Redirect::redirectTo('categories.php?action=create');
 };
 
 if (isset($_POST['update'])) {
-    Redirect::redirectTo('public/backend/categories.php?action=update&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('categories.php?action=update&id=' . $_POST["id"] . '');
 }
 
 if (isset($_POST['delete'])) {
-    Redirect::redirectTo('public/backend/categories.php?action=delete&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('categories.php?action=delete&id=' . $_POST["id"] . '');
 }
 
 ?>

@@ -12,15 +12,15 @@ $entries = $entry->getAll();
 
 //modify
 if (isset($_POST['create'])) {
-    Redirect::redirectTo('public/backend/entries.php?action=create');
+    Redirect::redirectTo('entries.php?action=create');
 };
 
 if (isset($_POST['update'])) {
-    Redirect::redirectTo('public/backend/entries.php?action=update&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('entries.php?action=update&id=' . $_POST["id"] . '');
 }
 
 if (isset($_POST['delete'])) {
-    Redirect::redirectTo('public/backend/entries.php?action=delete&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('entries.php?action=delete&id=' . $_POST["id"] . '');
 }
 
 

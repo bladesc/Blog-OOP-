@@ -33,7 +33,7 @@ if (isset($_POST['update'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/entries.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('entries.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -51,7 +51,7 @@ if (isset($_POST['update'])) {
         Redirect::redirectBack($entry->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/entries.php', ['update successfully'], $session);
+    Redirect::redirectTo('entries.php', ['update successfully'], $session);
 }
 ?>
 

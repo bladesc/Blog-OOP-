@@ -16,7 +16,7 @@ if (isset($_POST['logout'])) {
 }
 
 if (isset($_POST['login'])) {
-    Redirect::redirectTo('public/frontend/login.php');
+    Redirect::redirectTo('login.php');
 }
 ?>
 

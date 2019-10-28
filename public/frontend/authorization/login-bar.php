@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/frontend/login.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('login.php', $validate->showMessage(), $session);
     }
     $db = new Db;
     $user = new User($db);
@@ -38,9 +38,9 @@ if (isset($_POST['login'])) {
 
     if (!empty($login->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/frontend/login.php', $login->showMessage(), $session);
+        Redirect::redirectTo('login.php', $login->showMessage(), $session);
     } else {
-        Redirect::redirectTo('public/frontend/index.php');
+        Redirect::redirectTo('index.php');
     }
 }
 

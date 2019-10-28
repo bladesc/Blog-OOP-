@@ -29,7 +29,7 @@ if (isset($_POST['create'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirecttO('public/backend/entries.php', $validate->showMessage(), $session);
+        Redirect::redirecttO('entries.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -43,10 +43,10 @@ if (isset($_POST['create'])) {
 
     if (!empty($entry->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/backend/entries.php', $entry->showMessage(), $session);
+        Redirect::redirectTo('entries.php', $entry->showMessage(), $session);
     }
 
-    Redirect::redirectTo('public/backend/entries.php', ['update successfully'], $session);
+    Redirect::redirectTo('entries.php', ['update successfully'], $session);
 }
 ?>
 

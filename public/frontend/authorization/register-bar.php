@@ -23,7 +23,7 @@ if (isset($_POST['register'])) {
 
     if (!empty($validate->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/frontend/register.php', $validate->showMessage(), $session);
+        Redirect::redirectTo('register.php', $validate->showMessage(), $session);
     }
 
     $db = new Db;
@@ -39,9 +39,9 @@ if (isset($_POST['register'])) {
 
     if (!empty($register->showMessage())) {
         $session = new Session;
-        Redirect::redirectTo('public/frontend/register.php', $register->showMessage(), $session);
+        Redirect::redirectTo('register.php', $register->showMessage(), $session);
     } else {
-        Redirect::redirectTo('public/frontend/index.php');
+        Redirect::redirectTo('index.php');
     }
 
 }

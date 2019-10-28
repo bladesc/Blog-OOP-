@@ -19,11 +19,11 @@ $comments = $comment->getAll();
 
 
 if (isset($_POST['update'])) {
-    Redirect::redirectTo('public/backend/comments.php?action=update&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('comments.php?action=update&id=' . $_POST["id"] . '');
 }
 
 if (isset($_POST['delete'])) {
-    Redirect::redirectTo('public/backend/comments.php?action=delete&id=' . $_POST["id"] . '');
+    Redirect::redirectTo('comments.php?action=delete&id=' . $_POST["id"] . '');
 }
 
 ?>
